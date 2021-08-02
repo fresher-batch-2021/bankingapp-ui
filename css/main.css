@@ -1,0 +1,74 @@
+*{
+	margin: 0%;
+	padding: 0%;
+}
+.header{
+	width: 100%;
+    height: 100vh;
+	 background-image:linear-gradient(#ffe8d6,rgba(0,168,255,0.3)),url('../images/Bank.jpg'); 
+	 background-repeat: no-repeat;	
+	 background-size:100% 100%; 
+	clip-path:polygon(100% 0%,100% 77%,50% 100%,0 75%,0 0);
+	position:relative;
+	}
+	
+	a{
+		text-decoration:none;
+		color:#000;
+
+	}
+	ul{
+		list-style:none;
+	}
+	.header ul {
+		float: right;
+	}
+	.header ul li{
+		margin-top: 10px;
+		float:left;
+		font-size:10px;
+		margin-right:10px;
+	}
+.header li:hover{
+	font-size:10px; 
+	letter-spacing:2px; 
+	 border: 2px solid black; 
+	border-radius:8px;
+	transform: translateY(-4px);			
+}
+
+.header-buttons a {
+	
+position: relative;
+left: 40%;
+top: 30%;
+}
+
+
+.dropdown {
+	display:inline-block;
+	position: relative;
+  }
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	width: 100%;
+	overflow: auto;
+	box-shadow:#ff8080;
+	padding-top: 10px;
+	margin-top:2px;	
+  }
+  .dropdown:hover .dropdown-content {
+	display: block;
+  }
+  .dropdown-content a {
+	display: block;
+	color: #000000;
+	padding: 5px;
+	text-decoration: none;
+  }
+  .dropdown-content a:hover {
+	color: #FFFFFF;
+	background-color: #00A4BD;
+	
+  }
