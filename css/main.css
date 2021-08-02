@@ -3,13 +3,7 @@
 	padding: 0%;
 }
 .header{
-	width: 100%;
-    height: 100vh;
-	 background-image:linear-gradient(#ffe8d6,rgba(0,168,255,0.3)),url('../images/Bank.jpg'); 
-	 background-repeat: no-repeat;	
-	 background-size:100% 100%; 
-	clip-path:polygon(100% 0%,100% 77%,50% 100%,0 75%,0 0);
-	position:relative;
+
 	}
 	
 	a{
