@@ -7,7 +7,9 @@
 
 </head>
 <body>
-  <style>.header{background-image:linear-gradient(#ffe8d6,rgba(0,168,255,0.3)),url('Images/Bank.jpg');
+  
+  <style>
+  .header{background-image:linear-gradient(#ffe8d6,rgba(0,168,255,0.3)),url('Images/Bank.jpg');
 	width: 100%;
     height: 100vh;
 	 background-repeat: no-repeat;	
@@ -17,12 +19,13 @@
   
 } </style>
 <header id="header">
-
+<footer id="footer">
+</footer>
 </header>
 <section class="header-section">
     <div class="center-div">
       <div class="header-buttons">
-        <!-- <a href="Login.html" target="blank">login</a> -->
+         <a href="Login.html" target="blank">login</a>
         <!-- <a href="Register.html" target="blank">register</a> -->
       </div>
     </div>
@@ -32,6 +35,7 @@
     <script src="js\jquery.min.js"></script>
     <script>
         $("#header").load("header.html")
+        $("#footer").load("footer.html")
     </script>
 </body>
 </html>

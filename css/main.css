@@ -65,6 +65,14 @@ background-color: #fae1dd;
 		color: #FFFFFF;
 		background-color: #00A4BD;
 	  }
+	  
 
-  /* register */
-
+	  .footer{
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		background-color: red;
+		color: white;
+		text-align: center;
+	 }
