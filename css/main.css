@@ -1,6 +1,7 @@
-*{
+ *{
 	margin: 0%;
 	padding: 0%;
+	box-sizing:border-box;
 }
 .header{
 background-color: #fae1dd;
@@ -65,14 +66,20 @@ background-color: #fae1dd;
 		color: #FFFFFF;
 		background-color: #00A4BD;
 	  }
-	  
+body{
+	background-color: #fefae0;
+}
+.btn a{
+	/* text-align: center; */
+	/* margin-left: 100px; */
+	/* position: absolute; */
+	/* margin: 0 auto; */
+	/* left: 400px; */
+	/* top: 100px; */
+}
 
-	  .footer{
-		position: fixed;
-		left: 0;
-		bottom: 0;
-		width: 100%;
-		background-color: red;
-		color: white;
-		text-align: center;
-	 }
+.accReg{
+	border: 2px solid red;
+	margin: 5px 240px 0px 250px;
+	padding: 20px 0px 40px 80px;
+}

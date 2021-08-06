@@ -4,20 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
-    <h3>Login</h3>
-    <form action="listtask.html">
-        
-        <label for="email">Email*</label>
-        <input type="email" name="email" id="email" required> <br/>
-        <label for="password">Password*</label>
-        <input type="password" name="password" id="password" required> <br/>      
-        <label for="dob">Date of Birth*</label>    
-        <input type="date" name="dob" id="dob" required> <br/>      
-        <br>
-        <button>Submit</button>
-    </form>
+  <header id="header"></header>
+  <h1>Login</h1><br></div>
+  <div class="form">
+      <form method="post" target="blank" onsubmit="login()"> 
+      <div id="name">
+             
+      <label for="email">Email*</label>
+      <input type="email" name="email" id="email" required> <br />
+
+      <label for="password">password*</label>
+      <input type="password" name="password" id="password"> <br />
+
+
+      <button type="submit"><a href="connect.html">Submit</a></button>
+      <button class="btn"><a href="index.html">Back</a></button>
+  </form>
+</div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script>
+$("#header").load("header.html");
+function login() {
+  event.preventDefault();
+
+  const email = document.querySelector("#email").value;
+  const password = document.querySelector("#password").value;
+
+
+  console.log(email+" "+password);
+  let userobj = {
+      "email": email,
+     "password":password,
+     };
+  console.log(userobj);
+  if(email =="amritha@gmail.com" && password =="123456")
+            {
+            alert("login Successfully");
+            window.location.href = "index.html";
+            }
+            else{
+                alert("invalid user");
+            }
+  alert("login Successfully");
+  window.location.href = "index.html";
+
+
+
+}
+</script> 
 </body>
+
 </html>

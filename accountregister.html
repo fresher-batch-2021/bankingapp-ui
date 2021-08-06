@@ -5,60 +5,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>accountregister</title>
 </head>
 
 <body>
     <header id="header"></header>
-            <h1>Register</h1><br></div>
-            <div class="form">
-                <form method="post" target="blank" onsubmit="accountregister()"> 
-                <div id="name">
-                       
-                <label for="name">First Name*</label>
-                <input type="text" name="name" id="firstname"> <br />
+            
+            
+                <form class="accReg" method="post" target="blank" onsubmit="accountregister()"> 
+                
+                    <h1>Register</h1> 
+                <label for="name">First Name*</label><br>
+                <input type="text" name="name" id="firstname"> <br>
 
-                <label for="middlename">Middle Name</label>
-                <input type="text" name="name" id="middlename"> <br />
+                <label for="middlename">Middle Name</label><br>
+                <input type="text" name="name" id="middlename"> <br>
 
-                <label for="lastname">Last Name*</label>
-                <input type="text" name="name" id="lastname"> <br />
+                <label for="lastname">Last Name*</label><br>
+                <input type="text" name="name" id="lastname"> <br>
 
-                <label for="email">Email*</label>
-                <input type="email" name="email" id="email" required> <br />
+                <label for="email">Email*</label><br>
+                <input type="email" name="email" id="email" required> <br>
 
-                <label for="dob">Date of Birth*</label>
-                <input type="date" name="dob" id="dob"> <br />
+                <label for="dob">Date of Birth*</label><br>
+                <input type="date" name="dob" id="dob"> <br>
 
-                <label for="MobileNo">Mobile Number*</label>
-                <input type="number" name="MobileNo" id="mobileno"> <br />
+                <label for="MobileNo">Mobile Number*</label><br>
+                <input type="number" name="MobileNo" id="mobileno"> <br>
 
-                <label for="Aadhar No">AadharNumber*</label>
-                <input type="number" name="AadharNo" id="aadharno" required> <br />
+                <label for="Aadhar No">AadharNumber*</label><br>
+                <input type="number" name="AadharNo" id="aadharno" required> <br>
 
-                <label for="PanCardNo">PanCardNumber</label>
-                <input type="number" name="PanCard" id="pancardno" required> <br />
+                <label for="PanCardNo">PanCardNumber</label><br>
+                <input type="number" name="PanCard" id="pancardno" required> <br>
 
-                <label for="Address">Address*</label>
-                <input type="text" name="Address" id="address" required> <br />
+                <label for="Address">Address*</label><br>
+                <input type="text" name="Address" id="address" required> <br>
 
-                <label for="District">District</label>
-                <input type="text" name="District" id="district" required> <br />
+                <label for="District">District</label><br>
+                <input type="text" name="District" id="district" required> <br>
 
-                <label for="Branch">Branch</label>
-                <input type="text" name="Branch" id="branch" required> <br />
+                <label for="Branch">Branch</label><br>
+                <input type="text" name="Branch" id="branch" required> <br>
 
-                <label for="State">State</label>
-                <input type="text" name="State" id="state" required> <br />
+                <label for="State">State</label><br>
+                <input type="text" name="State" id="state" required> <br>
 
-                <label for="Pincode">Pincode*</label>
-                <input type="Number" name="pincode" id="pincode" required> <br />
+                <label for="Pincode">Pincode*</label><br>
+                <input type="Number" name="pincode" id="pincode" required> <br>
 
                 <button type="submit">Submit</button>
                 <button class="btn"><a href="accounts.html">Back</a></button>
             </form>
-        </div>
-    </div>
+        
+
     <script src="js/jquery.min.js"></script>
     <script>
         $("#header").load("header.html");
@@ -70,27 +70,40 @@
             const email = document.querySelector("#email").value;
             const dob = document.querySelector("#dob").value;
             const mobno = document.querySelector("#mobileno").value;
-            if (mobno.value == "") {
-                window.alert("Error: Cell number must not be null.");
-                number.focus();
-                return false;
-            }
+            // if (mobno.value == "") {
+            //     window.alert("Error: Cell number must not be null.");
+            //     number.focus();
+            //     return false;
+            // }
             if (mobno.length != 10) {
                 window.alert("Phone number must be 10 digits.");
                 mobno.focus();
                 return false;
             }
+            
 
             const aadharno = document.querySelector("#aadharno").value;
+            if (aadharno.length != 12) {
+                window.alert("Aadhar number must be 12 digits.");
+                aadharno.focus();
+                return false;
+            }
             const pancardno = document.querySelector("#pancardno").value;
+            if (aadharno.length != 12) {
+                window.alert("Aadhar number must be 12 digits.");
+                aadharno.focus();
+                return false;
+            }
+
             const address = document.querySelector("#address").value;
             const district = document.querySelector("#district").value;
             const branch = document.querySelector("#branch").value;
             const state = document.querySelector("#state").value;
             const pincode = document.querySelector("#pincode").value;
 
-            console.log(fname+" "+mname+" "+lname+" "+email+" "+dob+" "+mobno+" "+aadharno+" "+pancardno+" "+address+" "+district+" "+branch+" "+state+" "+pincode+" ");
-            console.log(fname);
+        //    console.log(fname+" "+mname+" "+lname+" "+email+" "+dob);
+        //    console.log(mobno+" "+aadharno+" "+pancardno+" "+address+" "+district+" "+branch+" "+state+" "+pincode);
+        
             let userobj = {
                 "Firstname": fname,
                 "middlename": mname,
@@ -106,9 +119,9 @@
                 "state": state,
                 "pincode": pincode
             };
-            console.log(userobj);
+             console.log(userobj);
             alert("Registration Successfully");
-            window.location.href = "index.html";
+          //  window.location.href = "index.html";
 
 
 
