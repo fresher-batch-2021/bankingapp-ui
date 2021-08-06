@@ -88,12 +88,12 @@
                 aadharno.focus();
                 return false;
             }
-            const pancardno = document.querySelector("#pancardno").value;
-            if (pancard.length != 7) {
-                window.alert("Pancard number must be 7 digits.");
-                pancardno.focus();
-                return false;
-            }
+            // const pancardno = document.querySelector("#pancardno").value;
+            // if (pancard.length != 7) {
+            //     window.alert("Pancard number must be 7 digits.");
+            //     pancardno.focus();
+            //     return false;
+            // }
 
             const address = document.querySelector("#address").value;
             const district = document.querySelector("#district").value;
@@ -121,7 +121,7 @@
             };
              console.log(userobj);
             alert("Registration Successfully");
-          //  window.location.href = "index.html";
+            window.location.href = "index.html";
 
 
 
