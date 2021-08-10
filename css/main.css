@@ -254,9 +254,9 @@ form:hover .form-button button{
 	box-shadow:0 0 20px 0 rgba(0,0,0,0.3);
 }
 
-::placeholders{
+/* #placeholders{
 	font-size:0.84rem;	
-}
+} */
 
 /****footer starts****/
 
