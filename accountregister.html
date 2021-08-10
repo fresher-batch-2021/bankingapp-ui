@@ -5,96 +5,114 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>accountregister</title>
 </head>
 
 <body>
     <header id="head"></header>
             
-            
+            <div class="accountcontainer">
+
                 <form class="accReg" method="post" target="blank" onsubmit="accountregister()"> 
+                 <h1>AccountRegister</h1> 
                 
-                    <h1>Register</h1> 
+                 <div class="account-form">
                 <label for="name">First Name*</label><br>
                 <input type="text" name="name" id="firstname"> <br>
+                </div>
 
+                <div class="account-form">
                 <label for="middlename">Middle Name</label><br>
                 <input type="text" name="name" id="middlename"> <br>
-
+                </div>
+                <div class="account-form">
                 <label for="lastname">Last Name*</label><br>
                 <input type="text" name="name" id="lastname"> <br>
-
+                </div>
+                
+                <div class="account-form">
                 <label for="email">Email*</label><br>
                 <input type="email" name="email" id="email" required> <br>
+                </div>
 
+                <div class="account-form">
                 <label for="dob">Date of Birth*</label><br>
                 <input type="date" name="dob" id="dob"> <br>
+                </div>
 
+                <div class="account-form">
                 <label for="MobileNo">Mobile Number*</label><br>
                 <input type="number" name="MobileNo" id="mobileno"> <br>
+                </div>
 
+                <div class="account-form">
                 <label for="Aadhar No">AadharNumber*</label><br>
                 <input type="number" name="AadharNo" id="aadharno" required> <br>
+                </div>
 
+                <div class="account-form">
                 <label for="PanCardNo">PanCardNumber</label><br>
                 <input type="number" name="PanCard" id="pancardno" required> <br>
+                <div>
 
+                <div class="account-form">
                 <label for="Address">Address*</label><br>
                 <input type="text" name="Address" id="address" required> <br>
+                </div>
 
+                <div class="account-form">
                 <label for="District">District</label><br>
                 <input type="text" name="District" id="district" required> <br>
+                </div>
 
+                <div class="account-form">
                 <label for="Branch">Branch</label><br>
                 <input type="text" name="Branch" id="branch" required> <br>
+                </div>
 
+                <div class="account-form">
                 <label for="State">State</label><br>
                 <input type="text" name="State" id="state" required> <br>
+                </div>
 
+                <div class="account-form">
                 <label for="Pincode">Pincode*</label><br>
                 <input type="Number" name="pincode" id="pincode" required> <br>
+                </div>
 
                 <button type="submit">Submit</button>
                 <button class="btn"><a href="accounts.html">Back</a></button>
             </form>
-        
+        </div>
 
     <script src="js/jquery.min.js"></script>
     <script>
         $("#head").load("head.html");
         function accountregister() {
             event.preventDefault();
-            const fname = document.querySelector("#firstname").value;
-            const mname = document.querySelector("#middlename").value;
-            const lname = document.querySelector("#lastname").value;
+            const firstname = document.querySelector("#firstname").value;
+            const middlename = document.querySelector("#middlename").value;
+            const lastname = document.querySelector("#lastname").value;
             const email = document.querySelector("#email").value;
-            const dob = document.querySelector("#dob").value;
-            const mobno = document.querySelector("#mobileno").value;
-            // if (mobno.value == "") {
-            //     window.alert("Error: Cell number must not be null.");
-            //     number.focus();
-            //     return false;
-            // }
-            if (mobno.length != 10) {
+            const dateofbirth = document.querySelector("#dob").value;
+            const mobilenumber = document.querySelector("#mobileno").value;
+            
+            if (mobilenumber.length != 10) {
                 window.alert("Phone number must be 10 digits.");
-                mobno.focus();
+                mobilenumber.focus();
                 return false;
             }
             
 
-            const aadharno = document.querySelector("#aadharno").value;
+            const aadharnumber = document.querySelector("#aadharno").value;
             if (aadharno.length != 12) {
                 window.alert("Aadhar number must be 12 digits.");
-                aadharno.focus();
+                aadharnumber.focus();
                 return false;
             }
-            // const pancardno = document.querySelector("#pancardno").value;
-            // if (pancard.length != 7) {
-            //     window.alert("Pancard number must be 7 digits.");
-            //     pancardno.focus();
-            //     return false;
-            // }
-
+             
+            const pancardnumber = document.querySelector("#pancardno").value;
             const address = document.querySelector("#address").value;
             const district = document.querySelector("#district").value;
             const branch = document.querySelector("#branch").value;
@@ -105,14 +123,14 @@
         //    console.log(mobno+" "+aadharno+" "+pancardno+" "+address+" "+district+" "+branch+" "+state+" "+pincode);
         
             let userobj = {
-                "Firstname": fname,
-                "middlename": mname,
-                "lastname": lname,
+                "Firstname": firstname,
+                "middlename": middlename,
+                "lastname": lastname,
                 "email": email,
-                "dob": dob,
-                "mobno": mobno,
-                "aadharno": aadharno,
-                "pancardno": pancardno,
+                "dob": dateofbirth,
+                "mobno": mobilenumber,
+                "aadharno": aadharnumber,
+                "pancardno": pancardnumber,
                 "address": address,
                 "district": district,
                 "branch": branch,
@@ -129,4 +147,4 @@
     </script> 
 </body>
 
-</html>s
+</html>

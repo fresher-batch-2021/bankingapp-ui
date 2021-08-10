@@ -334,4 +334,33 @@ form:hover .form-button button{
 	text-align: left!important;
 }
 
+/** about us ***/
+.aboutus{
+	background-color: antiquewhite;
+}
 
+.accountcontainer{
+	background-color: antiquewhite;
+	padding:20px 40px;
+	border-radius:5px;
+	border:black;
+	margin: 20px 450px 0px 400px ;
+}
+.account-form{
+	position:relative;
+	margin:20px 0 40px;
+	width: 300px;
+
+}
+
+.account-form input{
+	background-color:#fff;
+	border:0;
+	border-bottom:2px #fff solid;
+	display:block;
+	width:100%;
+	padding: 10px 2px;
+	font-size:2px;
+	color:cornsilk;
+
+}
