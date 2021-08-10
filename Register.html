@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Register</title>
 </head>
 <body>
@@ -22,7 +24,7 @@
   <header id="head"></header>
   <h1>Register</h1><br></div>
   <div class="form">
-      <form method="post" target="blank" onsubmit="register()"> 
+      <form method="post" target="blank" onSubmit="register()"> 
       <div id="name">
              
       <label for="email">Email*</label><br>
@@ -52,27 +54,40 @@ function register() {
   const confirmpassword = document.querySelector("#confirmpassword").value;
 
 
-  console.log(email+" "+password+" "+confirmpassword);
-  let userobj = {
-        "email": email,
-     "password":password,
-     "confirmpassword":confirmpassword,  
-     };
-  console.log(userobj);
-  if(password != confirmpassword)
-  {
-  alert("Incorrect password");
-  }
-  else
-  {
-    alert("Register Successfully");
-  window.location.href = "index.html";
+  if (email == "" || email == null || email.trim() == "") {
+                alert("invalid name");
+            }
+            if (password.length < 6) {
+                alert("password is short");
+            }
+            else 
+                if (password != confirmpassword) {
+                    alert("password does not match");
+                }  
+                else {
+                     // backend
+                     let registerObj = {
+                        "email": email,
+                        "password": password,
+                        "confirmpassword": confirmpassword
+                          };
 
-  }
-  
+                    console.log(registerObj); //for printing in console 
 
+              const url = "https://product-mock-api.herokuapp.com/bankingapp/api/v1/auth/register";//registration url
+              axios.post(url, registerObj).then(res => {
 
-}
+                        console.log(res);//printing in console // for user purpose
+                        alert("Registration is succesful");
+                        window.location.href = "Login.html";
+                    }).catch(err => {
+                        console.error(err);
+                        alert("Unable to register");
+                    });
+
+                }
+              }
+                
 </script> 
 </body>
 

@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Login</title>
     </head>
 <body>
   <header id="head"></header>
 <h1>Login</h1><br></div>
   <div class="form">
-      <form method="post" target="blank" onsubmit="login()"> 
+      <form method="post" target="blank" onSubmit="login()"> 
       <div id="name">
              
       <label for="email">Email*</label>
@@ -20,7 +23,7 @@
       <input type="password" name="password" id="password"> <br />
 
 
-      <button type="submit"><a href="connect.html">Submit</a></button>
+      <button type="submit">Submit</button>
       <button class="btn"><a href="index.html">Back</a></button>
   </form>
 </div>
@@ -35,25 +38,46 @@ function login() {
   const password = document.querySelector("#password").value;
 
 
-  console.log(email+" "+password);
-  let userobj = {
-      "email": email,
-     "password":password,
-     };
-  console.log(userobj);
-  if(email =="amritha@gmail.com" && password =="123456")
-            {
-            alert("login Successfully");
-            window.location.href = "index.html";
-            }
-            else{
-                alert("invalid user");
-            }
-  alert("login Successfully");
-  window.location.href = "index.html";
+  if(email ==""||email ==null||email.trim()==""){
+        alert("invalid username");
+    }
+    else{
+    if(password.trim() != ""){
 
+       const loginobj = {
+        "email": email,
+        "password": password 
+       };
 
+        //sending data to server
+        const url = "https://product-mock-api.herokuapp.com/bankingapp/api/v1/auth/login";
 
+        console.log(loginobj);//for our verification
+
+        axios.post(url,loginobj).then(res=>{
+            console.log(res);
+
+            //to stay loged in
+            // let user = res.data;
+            // localStorage.setItem("LOGGED_IN_USER", JSON.stringify(user));
+
+            alert("login succesful");
+            window.location.href="connect.html";
+        }).catch(err=>{
+                console.log(err.response.data);
+                if (err.response.data.errorMessage){
+                    alert(err.response.data.errorMessage);
+                }
+                else{
+                alert("login failed");
+                }
+        });
+    
+    }
+    else{
+        alert("password is invalid");
+    }
+}
 }
 </script> 
 </body>
