@@ -179,7 +179,7 @@ p{
 
 .box a:after{
 	content: "\f10d";
-	font-family:FontAwesome;
+	font-family:'Times New Roman', Times, serifs;
 	width:40px;
 	height:40;
 	background: linear-gradient(to right,#1e5799 0%,#3ccdbb 0%,#16c9f6 100%);
