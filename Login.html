@@ -41,8 +41,7 @@ function login() {
   if(email ==""||email ==null||email.trim()==""){
         alert("invalid username");
     }
-    else{
-    if(password.trim() != ""){
+    else if(password.trim() != ""){
 
        const loginobj = {
         "email": email,
@@ -61,16 +60,18 @@ function login() {
             // let user = res.data;
             // localStorage.setItem("LOGGED_IN_USER", JSON.stringify(user));
 
-            alert("Logged in successfully");
-            window.location.href="connect.html";
+            alert("Login successfully");
+            window.location.href="index.html";
         }).catch(err=>{
-                console.log(err.response.data);
-                if (err.response.data.errorMessage){
-                    alert(err.response.data.errorMessage);
-                }
-                else{
+                // console.log(err.res.data);
+                // if (err.res.data.errorMessage){
+                //     alert(err.res.data.errorMessage);
+                // }
+                // else{
+                // alert("Login failed");
+                // }
+                console.error(err);
                 alert("Login failed");
-                }
         });
     
     }
@@ -78,7 +79,7 @@ function login() {
         alert("Password cannot be blank");
     }
 }
-}
+
 </script> 
 </body>
 
