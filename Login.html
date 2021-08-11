@@ -61,7 +61,7 @@ function login() {
             // let user = res.data;
             // localStorage.setItem("LOGGED_IN_USER", JSON.stringify(user));
 
-            alert("login succesful");
+            alert("Logged in successfully");
             window.location.href="connect.html";
         }).catch(err=>{
                 console.log(err.response.data);
@@ -69,7 +69,7 @@ function login() {
                     alert(err.response.data.errorMessage);
                 }
                 else{
-                alert("login failed");
+                alert("Login failed");
                 }
         });
     
