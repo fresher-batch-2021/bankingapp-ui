@@ -30,11 +30,11 @@
       <label for="email">Email*</label><br>
       <input type="email" name="email" id="email" required> <br>
 
-      <label for="password">password*</label><br>
-      <input type="password" name="password" id="password"><br>
+      <label for="password">Password*</label><br>
+      <input type="password" name="password" id="password" required><br>
 
-      <label for="confirmpassword">confirmpassword*</label><br>
-      <input type="password" name="confirmpassword" id="confirmpassword"><br>
+      <label for="confirmpassword">Confirm Password* </label><br>
+      <input type="password" name="confirmpassword" id="confirmpassword" required><br>
 
 
       <button type="submit">Submit</button>
@@ -57,12 +57,12 @@ function register() {
   if (email == "" || email == null || email.trim() == "") {
                 alert("invalid name");
             }
-            if (password.length < 6) {
-                alert("password is short");
+            if (password.length < 8) {
+                alert("Password must be alteast 8 Charcter");
             }
             else 
                 if (password != confirmpassword) {
-                    alert("password does not match");
+                    alert("Password does not match");
                 }  
                 else {
                      // backend
