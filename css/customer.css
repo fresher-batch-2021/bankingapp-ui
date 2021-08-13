@@ -43,7 +43,7 @@ body{
     background-color: rgb(112, 112, 112)!important;
 }
 
-#a{
+a{
         color: pink;
         background: orange;
       }
