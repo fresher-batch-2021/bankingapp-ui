@@ -8,26 +8,29 @@
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
     </head>
 <body>
   <header id="head"></header>
-<h1>Login</h1><br></div>
-  <div class="form">
+ 
+  <div class="loginbox">
+      <img src="Images/ava.jpg" class="avatar">
+      <h1>Login Here</h1>
       <form method="post" target="blank" onSubmit="login()"> 
-      <div id="name">
+      <!-- <div id="name"> -->
              
-      <label for="email">Email*</label>
-      <input type="email" name="email" id="email" required> <br />
+      <label for="email">Email*</label><br>
+      <input type="email" name="email" id="email" placeholder="Enter Email " required> <br />
 
-      <label for="password">Password*</label>
-      <input type="password" name="password" id="password" required> <br />
+      <label for="password">Password*</label><br>
+      <input type="password" name="password" id="password" placeholder="Enter Password " required> <br />
 
 
       <button type="submit">Submit</button>
-      <button class="btn"><a href="index.html">Back</a></button>
+      <!-- <button class="btn"><a href="index.html">Back</a></button> -->
   </form>
-</div>
-</div> 
+<!-- </div> -->
+<!-- </div>  -->
 <script src="js/jquery.min.js"></script>
 <script>
 $("#head").load("head.html");
@@ -59,7 +62,7 @@ function login() {
             //to stay loged in
             // let user = res.data;
             // localStorage.setItem("LOGGED_IN_USER", JSON.stringify(user));
-
+            localStorage.setItem("senderEmail",email);
             alert("Login successfully");
             window.location.href="index.html";
         }).catch(err=>{
