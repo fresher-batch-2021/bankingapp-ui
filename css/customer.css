@@ -1,6 +1,6 @@
 body{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    background-color:rgb(168, 209, 236);
+    /* background-color:rgb(168, 209, 236); */
     
 }
 
@@ -33,9 +33,9 @@ body{
 .btn-info{
     padding: 1rem 1.2rem;
     background-color: rgb(211, 121, 128)!important;
-    color: rgb(240, 233, 233)!important; 
+    color: rgb(240, 233, 233)!important;
     margin-left: 5px;
-    /* padding: 0.75%; */
+    padding: 0.75rem;
     transition: all 0.5s;
 }
 
