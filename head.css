@@ -30,6 +30,7 @@
 
 .navbar-nav li{
     padding: 0 10px;
+    float: left;
 }
 .navbar-nav li a{
     float: right;
