@@ -1,0 +1,45 @@
+    
+    <html>
+
+    <head>
+        <link rel="stylesheet" href="css/deposit.css">
+    </head>
+
+    <body>
+
+        <div class="flex">
+            <div class="element-center">
+
+                <div id="acctBalance">
+
+                    <span class="wrap"></span>
+                    </a>
+                    <h1>
+                        Total Balance
+                    </h1>
+                    <label id="acctBalanceLbl"></label>
+                </div>
+
+                <div id="inputs">
+                    <h2>
+                        Deposit
+                    </h2>
+                    <input type="number" id="userDeposit" required>
+                    <button id="btnDeposit" type="button" onClick="btnDeposits()">Deposit</button>
+
+                    <h2>
+                        Withdraw
+                    </h2>
+                    <input type="number" id="userWithdraw" required>
+                    <button type="button"  onclick="btnWithdraws()"  id="btnWithdraw">Withdraw</button>
+                </div>
+            </div>
+        </div>
+
+       
+    <script src="js/jquery.min.js"></script>
+    <script src="js/deposit.js"></script>
+
+</body>
+
+</html>

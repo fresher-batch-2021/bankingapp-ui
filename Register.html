@@ -44,8 +44,10 @@
 </div>
 </div>
 <script src="js/jquery.min.js"></script>
+<script src="js/service.js"></script>
 <script>
 $("#head").load("head.html");
+
 function register() {
   event.preventDefault();
 
@@ -60,31 +62,28 @@ function register() {
             if (password.length < 8) {
                 alert("Password must be alteast 8 Character");
             }
-            else 
-                if (password != confirmpassword) {
-                    alert("Password does not match");
-                }  
+            // else 
+            //     if (password != confirmpassword) {
+            //         alert("Password does not match");
+            //     }  
                 else {
                      // backend
                      let registerObj = {
                         "email": email,
                         "password": password,
-                        "confirmpassword": confirmpassword
+                        // "confirmpassword": confirmpassword
                           };
 
                     console.log(registerObj); //for printing in console 
 
-              const dbusername = "apikey-v2-zyhv5j7i61imeby1qya0ma2ejrc0fkf9n4e4bl3w5gn";//registration url
-              const dbpassword="ec6094ae0714dc7a5ffc50a86924bef3";
-              const basicAuth=" Basic "+btoa(dbusername+":"+dbpassword);
-              const url="https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/bankingapp_user"
-              axios.post(url, registerObj,{ headers: {'Authorization':basicAuth}}).then(res => {
-
-                        console.log(res);//printing in console // for user purpose
+              userService. register(registerObj).then(res => 
+              {
+                        let data=res.data;
+                        console.log(data);//printing in console // for user purpose
                         alert("Registration is Successful");
                         window.location.href = "Login.html";
                     }).catch(err => {
-                        console.error(err.response);
+                        console.error(err.response.data);
                         alert("Unable to register");
                     });
 
