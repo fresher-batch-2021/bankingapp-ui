@@ -1,3 +1,14 @@
+function loginCheck(){
+  let isLoggedIn=JSON.parse(localStorage.getItem("isLoggedIn"));
+if(isLoggedIn==undefined||isLoggedIn==null||isLoggedIn==false){
+alert("needed to login first");
+  
+  localStorage.setItem("isLoggedIn",JSON.stringify(false));
+  window.location.href="Login.html";
+}
+}
+loginCheck();
+
 var account = function (name, balance){
 
    account.name = name;

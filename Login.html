@@ -51,7 +51,7 @@ function login() {
         "password": password 
        };
        
-       UserService.login(loginobj).then(res=>
+       userService.login(loginobj).then(res=>
         //sending data to server
        {
             console.log(res);
@@ -61,6 +61,7 @@ function login() {
             //localStorage.setItem("LOGGED_IN_USER", JSON.stringify(user));
             localStorage.setItem("senderEmail",email);
             alert("Login successfully");
+            localStorage.setItem("isLoggedIn",JSON.stringify(true));
             window.location.href="index.html";
         }).catch(err=>{
                 console.log(err.response.data);

@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() { 
   
     $("#account-select").change(function() {
@@ -105,3 +107,15 @@ $(document).ready(function() {
     window.location.href = "aboutus.html";
 
   }
+
+ 
+
+function loginCheck(){
+    let isLoggedIn=JSON.parse(localStorage.getItem("isLoggedIn"));
+if(isLoggedIn==undefined||isLoggedIn==null||isLoggedIn==false){
+  alert("needed to login first");
+    window.location.href="Login.html";
+    localStorage.setItem("isLoggedIn",JSON.stringify(false));
+}
+}
+loginCheck();
