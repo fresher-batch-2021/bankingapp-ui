@@ -1,23 +1,23 @@
 body{
 margin:0;
 padding:0;
-/* background:url('/Images/icons.png'); */
 background-size:cover;
 background-position: center;
 font-family:sans-serif;
 }
 
 .loginbox{
-    width:320px;
-    height:420px;
-    background:black;
-    color:#fff;
-    top:60%;
+    width:350px;
+    height:600px;
+    background:#ffc187;
+    color:black;
+    top:50%;
     left:50%;
     position:absolute;
     transform: translate(-50%,-50%);
     box-sizing: border-box;
     padding:70px 30px;
+
 }
 .avatar{
 width:100px;
@@ -53,37 +53,38 @@ h1{
     border-bottom:1px solid #fff;
     background:transparent;
     outline:none;
-    height:40px;
-    color:#fff;
-    font-size: 12px;
+    height:20px;
+    color:black;
+    font-size: 15px;
 
 }
 
 .loginbox button[type="submit"]
 {
+    margin-bottom: 30px;
     border:none;
     outline:none;
     height:20px;
     background:#fb2525; 
     color:#fff;
     font-size: 15px;
-    border-radius:25px;
+    border-radius:45px;
 }
 
-/* .loginbox button[type="btn"]
+.loginbox button[type="btn"]
 {
     border:none;
     outline:none;
-    height:20px;
+    height:30px;
     background:#fb2525; 
-    color:#fff;
-    font-size: 15px;
-} */
+    color:black;
+    font-size: 30px;
+}
 
 
 .loginbox button[type="submit"]:hover{
     cursor:pointer;
-    background:#ffc187;
+    background:white;
     color:#000;
 
 }
@@ -97,5 +98,5 @@ h1{
 
 
 .loginbox a{
-color:#ffc107;
+color:black;
 }

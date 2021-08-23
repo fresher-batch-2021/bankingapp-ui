@@ -1,4 +1,4 @@
-2.6 KB
+
   
 <!DOCTYPE html>
 <html lang="en">
@@ -13,13 +13,13 @@
     <link rel="stylesheet" type="text/css" href="css/login.css">
     </head>
 <body>
-  <header id="head"></header>
+  <!-- <header id="head"></header> -->
  
   <div class="loginbox">
       <img src="Images/ava.jpg" class="avatar" alt="Image error">
       <h1>Login Here</h1>
       <form method="post" target="blank" onSubmit="login()"> 
-      <!-- <div id="name"> -->
+    
              
       <label for="email">Email*</label><br>
       <input type="email" name="email" id="email" placeholder="Enter Email " required> <br />
@@ -29,13 +29,12 @@
 
 
       <button type="submit">Submit</button>
-      <!-- <button class="btn"><a href="index.html">Back</a></button> -->
+      <p class="backlink">Don't have an account ?  <a href="register.html">Register</a></p>
   </form>
-<!-- </div> -->
-<!-- </div>  -->
 <script src="js/jquery.min.js"></script>
+<script src="js/service.js"></script>
 <script>
-$("#head").load("head.html");
+// $("#head").load("head.html");
 function login() {
   event.preventDefault();
 
@@ -53,28 +52,29 @@ function login() {
         "password": password 
        };
        
-       userService.login(loginobj).then(res=>
-        //sending data to server
-       {
-            console.log(res);
+       userService.login(email,password);
+    //    then(res=>
+    //     //sending data to server
+    //    {
+    //         console.log(res);
 
-            //to stay loged in
-            // let user = res.data;
-            //localStorage.setItem("LOGGED_IN_USER", JSON.stringify(user));
-            localStorage.setItem("senderEmail",email);
-            alert("Login successfully");
-            localStorage.setItem("isLoggedIn",JSON.stringify(true));
-            window.location.href="index.html";
-        }).catch(err=>{
-                console.log(err.response.data);
-                if (err.response.data.errorMessage){
-                    alert(err.response.data.errorMessage);
-                }
-                else{
-                alert("Login failed");
+    //         //to stay loged in
+    //         // let user = res.data;
+    //         //localStorage.setItem("LOGGED_IN_USER", JSON.stringify(user));
+    //         localStorage.setItem("senderEmail",email);
+    //         alert("Login successfully");
+    //         localStorage.setItem("isLoggedIn",JSON.stringify(true));
+    //         window.location.href="index.html";
+    //     }).catch(err=>{
+    //             console.log(err.response.data);
+    //             if (err.response.data.errorMessage){
+    //                 alert(err.response.data.errorMessage);
+    //             }
+    //             else{
+    //             alert("Login failed");
                 
-    }
-        });
+    // }
+    //     });
 }
     else{
         alert("Password cannot be blank");
@@ -82,7 +82,7 @@ function login() {
 }
 
 </script> 
-<script src="js/service.js"></script>
+
 </body>
 
 </html
