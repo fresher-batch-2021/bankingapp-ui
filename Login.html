@@ -53,28 +53,7 @@ function login() {
        };
        
        userService.login(email,password);
-    //    then(res=>
-    //     //sending data to server
-    //    {
-    //         console.log(res);
-
-    //         //to stay loged in
-    //         // let user = res.data;
-    //         //localStorage.setItem("LOGGED_IN_USER", JSON.stringify(user));
-    //         localStorage.setItem("senderEmail",email);
-    //         alert("Login successfully");
-    //         localStorage.setItem("isLoggedIn",JSON.stringify(true));
-    //         window.location.href="index.html";
-    //     }).catch(err=>{
-    //             console.log(err.response.data);
-    //             if (err.response.data.errorMessage){
-    //                 alert(err.response.data.errorMessage);
-    //             }
-    //             else{
-    //             alert("Login failed");
-                
-    // }
-    //     });
+   
 }
     else{
         alert("Password cannot be blank");
