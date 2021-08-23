@@ -37,7 +37,7 @@
           <input class="standard-input" name="firstname" id="firstname" type="text" placeholder="First name..." required>
         </label>
         <label for="middlenames" class="standard-label">
-          Middle Names (If Applicable)
+          Middle Name (If Applicable)
           <input class="standard-input" name="middlename" id="middlename" type="text" placeholder="Middle names...">
         </label>
         <label for="lastname" class="standard-label">
@@ -60,12 +60,12 @@
           What type of account are you applying for?<span class="required">*</span>
           <br>
           <select  id="account-select" class="standard-select" required>
-            <option value="select" disabled selected>Choose Account</option>
-            <option value="basic-current">Basic Current Account</option>
-            <option value="premium-current">Premium Current Account</option>
-            <option value="instant-saver">Instant Access Savings Account</option>
-            <option value="lifetime-isa">Lifetime ISA</option>
-            <option value="help-to-buy">Help to Buy ISA</option>
+            <!-- <input type="checkbox" value="select" disabled selected>Choose Account</option> -->
+            <input type="checkbox" value="basic-current">Basic Current Account</option>
+            <input type="checkbox" value="premium-current">Premium Current Account</option>
+            <input type="checkbox" value="instant-saver">Instant Access Savings Account</option>
+            <input type="checkbox" value="lifetime-isa">Lifetime ISA</option>
+            <input type="checkbox"value="help-to-buy">Help to Buy ISA</option>
           </select>
         </label>
         <button type="button" id="show-address">Continue</button>
@@ -159,7 +159,7 @@
 
 <script src="js/jquery.min.js"></script>
 <script src="js/accountreg.js"></script>
- <script src="js/head.js"></script>
+ <!-- <script src="js/head.js"></script> -->
 <script>
    $("#head").load("head.html");
    </script>
@@ -234,7 +234,7 @@
                 <input type="text" name="name" id="lastname"> <br>
             </div>
 
-            <!-- <div class="account-form">
+             <div class="account-form">
                 <label for="email">Email*</label><br>
                 <input type="email" name="email" id="email" required> <br>
                 </div> -->
@@ -285,7 +285,7 @@
             </div>
 
             <button class="btn">Submit</button>
-            <!-- <button class="btn"><a href="accounts.html">Back</a></button> -->
+             <button class="btn"><a href="accounts.html">Back</a></button> -->
         <!-- </form>
     </div>
 
@@ -344,7 +344,7 @@
     <!--<script src="js/jquery.min.js"></script>
     <script>
        $("#head").load("head.html");
-       <!-- </script>
+        </script>
     </body>
 
 </html> -->

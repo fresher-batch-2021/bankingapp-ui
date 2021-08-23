@@ -1,4 +1,4 @@
-let details =[{name:"yesh",email:"yesh@email",amount:1000},{}];
+let details =[{entername:"",email:"",enteramount:1000},{}];
 let count=1;
 var content=`
 <table class="table table-hover table-bordered">
@@ -17,10 +17,10 @@ for(let detail of details){
    content +=`
    <tr class="table-info">
    <td scope="row">${count}</td>
-   <td>${detail.name}</td>
+   <td>${detail.entername}</td>
    <td>${detail.email}</td>
    <td>
-    <p id="BankBalance">${detail.amount}</p>
+    <p id="BankBalance">${detail.enteramount}</p>
    </td>
 </tr>`
 count++;

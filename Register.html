@@ -10,17 +10,6 @@
     <title>Register</title>
 </head>
 <body>
-    
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-</head>
-<body>
   <header id="head"></header>
   <h1>Register</h1><br></div>
   <div class="form">
@@ -62,10 +51,10 @@ function register() {
             if (password.length < 8) {
                 alert("Password must be alteast 8 Character");
             }
-            // else 
-            //     if (password != confirmpassword) {
-            //         alert("Password does not match");
-            //     }  
+            else 
+                if (password != confirmpassword) {
+                    alert("Password does not match");
+                }  
                 else {
                      // backend
                      let registerObj = {
