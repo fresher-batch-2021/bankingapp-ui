@@ -1,66 +1,44 @@
-
-  
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/validator.js"></script>
+    <script src="js/password.js"></script>
+    <script src="js/service.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="css/login.css">
-    </head>
+</head>
+
 <body>
-  <!-- <header id="head"></header> -->
- 
-  <div class="loginbox">
-      <img src="Images/ava.jpg" class="avatar" alt="Image error">
-      <h1>Login Here</h1>
-      <form method="post" target="blank" onSubmit="login()"> 
-    
-             
-      <label for="email">Email*</label><br>
-      <input type="email" name="email" id="email" placeholder="Enter Email " required> <br />
 
-      <label for="password">Password*</label><br>
-      <input type="password" name="password" id="password" placeholder="Enter Password " required> <br />
+    <div class="loginbox">
+        <img src="Images/ava.jpg" class="avatar" alt="Image error">
+        <h1>Login Here</h1>
+        <form method="post" target="blank" onsubmit="login()">
 
 
-      <button type="submit">Submit</button>
-      <p class="backlink">Don't have an account ?  <a href="register.html">Register</a></p>
-  </form>
-<script src="js/jquery.min.js"></script>
-<script src="js/service.js"></script>
-<script>
-// $("#head").load("head.html");
-function login() {
-  event.preventDefault();
+            <label for="email">Email*</label><br>
+            <input type="email" name="email" id="email" placeholder="Enter Email " required autocomplete="off"
+                autofocus> <br />
 
-  const email = document.querySelector("#email").value;
-  const password = document.querySelector("#password").value;
+            <label for="password">Password*</label><br>
+            <input type="password" name="password" id="password" placeholder="Enter Password " required
+                autocomplete="off" autofocus> <br />
 
 
-  if(email ==""||email ==null||email.trim()==""){
-        alert("invalid username");
-    }
-    else if(password.trim() != ""){
+            <button type="submit">Submit</button>
+            <p class="backlink">New Register <a href="register.html">Register</a></p>
+        </form>
 
-       const loginobj = {
-        "email": email,
-        "password": password 
-       };
-       
-       userService.login(email,password);
-   
-}
-    else{
-        alert("Password cannot be blank");
-    }
-}
 
-</script> 
 
 </body>
 

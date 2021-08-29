@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit-Application</title>
+
+</head>
+
+<body>
+    <header id="head"></header>
+    <main>
+        <div class="userDetails">
+            <form onsubmit="editApplication()">
+                <h3>Student-Information</h3>
+                <table aria-describedby="mydesc" class="table">
+                    <tr>
+                        <th scope="col">
+                            <label>First Name</label>
+                        </th>
+                        <td>
+                            <input type="text" id="firstName" value="" autocomplete="off">
+                        </td>
+                        <th scope="col">
+                            <label>Last Name</label>
+                        </th>
+                        <td>
+                            <input type="text" id="lastName" value="" autocomplete="off">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>Father Name</label>
+                        </th>
+                        <td>
+                            <input type="text" id="fatherName" value="" autocomplete="off">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>Date Of Birth</label>
+                        </th>
+                        <td>
+                            <input type="text" id="DOB" value="" autocomplete="off">
+                        </td>
+                        <th scope="col">
+                            <label>Gender</label>
+                        </th>
+                        <td>
+                            <input type="text" id="gender" value="" autocomplete="off" readonly>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>mobileNumber</label>
+                        </th>
+                        <td>
+                            <input type="text" id="mobilenumber" value="" autocomplete="off">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>Current-Address</label>
+                        </th>
+                        <td>
+                            <input type="text" id="currentAddress" autocomplete="off" value="">
+                        </td>
+                        <th scope="col">
+                            <label>Permanent-Address</label>
+                        </th>
+                        <td>
+                            <input type="text" id="permanentAddress" autocomplete="off" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>State</label>
+                        </th>
+                        <td>
+                            <input type="text" id="state" autocomplete="off" value="">
+                        </td>
+                        <th scope="col">
+                            <label>Branch</label>
+                        </th>
+                        <td>
+                            <input type="text" id="branch" autocomplete="off" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>Religion</label>
+                        </th>
+                        <td>
+                            <input type="text" id="religion" value="" autocomplete="off" readonly>
+                        </td>
+                        <th scope="col">
+                            <label>Community</label>
+                        </th>
+                        <td>
+                            <input type="text" id="community" autocomplete="off" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <label>Aadhar Number</label>
+                        </th>
+                        <td>
+                            <input type="text" id="aadharNumber" autocomplete="off" value="">
+                        </td>
+                    </tr>
+                    
+                </table>
+                <div class="submit">
+                    <input type="button" onclick="editApplication()" id="submit" value="Update">
+                </div>
+
+            </form>
+        </div>
+    </main>
+    <script src="js/jquery.min.js"></script>
+    <script>
+
+        let userData = JSON.parse(localStorage.getItem('userData'));
+        let reg = JSON.parse(localStorage.getItem('regform'));
+
+        console.log(userData);
+      
+
+        const firstName = document.querySelector("#firstName").value = userData.firstName;
+        const lastName = document.querySelector("#lastName").value = userData.lastName;
+        const fatherName = document.querySelector("#fatherName").value = userData.fatherName;
+        const DOB = document.querySelector("#DOB").value = userData.DOB;
+        const motherName = document.querySelector("#mobilenumber").value = userData.mobilenumber;
+        const gender = document.querySelector("#gender").value = userData.gender;
+        const currentAddress = document.querySelector("#currentAddress").value = userData.currentAddress;
+        const permanentAddress = document.querySelector("#permanentAddress").value = userData.permanentAddress;
+        const state = document.querySelector("#state").value = userData.state;
+        const branch = document.querySelector("#branch").value = userData.branch;
+        const religion = document.querySelector("#religion").value = userData.religion;
+        const community = document.querySelector("#community").value = userData.community;
+        const aadharNumber = document.querySelector("#aadharNumber").value = userData.aadharNumber;
+
+
+
+
+        function editApplication() {
+            alert("haiiii");
+            let customerFirstName = document.querySelector("#firstName").value;
+            let customerLastName = document.querySelector("#lastName").value;
+            let customerFatherName = document.querySelector("#fatherName").value;
+            let customerDOB = document.querySelector("#DOB").value;
+            let customermobilenumber = document.querySelector("#mobilenumber").value;
+            let customerGender = document.querySelector("#gender").value;
+            let customercurrentAddress = document.querySelector("#currentAddress").value;
+            let customerPermanentAddress = document.querySelector("#permanentAddress").value;
+            let customerState = document.querySelector("#state").value;
+            let customerbranch = document.querySelector("#branch").value;
+            let customerReligion = document.querySelector("#religion").value;
+            let customerCommunity = document.querySelector("#community").value;
+            let customerAadharNumber = document.querySelector("#aadharNumber").value;
+
+          
+                console.log(customerAadharNumber);
+            let customerObj = {
+                "firstName": customerFirstName,
+                "lastName": customerLastName,
+                "fatherName": customerFatherName,
+                "DOB": customerDOB,
+                "mobilenumber": customermobilenumber,
+                "gender": customerGender,
+                "currentAddress": customercurrentAddress,
+                "permanentAddress": customerPermanentAddress,
+                "state": customerState,
+                "branch": customerbranch,
+                "religion": customerReligion,
+                "community": customerCommunity,
+                "aadharNumber": customerAadharNumber,
+                
+            }
+            console.log(customerObj);
+            alert("Updated");
+            
+            localStorage.setItem('editform', JSON.stringify(customerObj));
+            
+            window.location.href = "profile.html";
+            alert("haaaiiiii2")
+          
+        }
+    </script>
+   
+    <script>
+        $("#head").load("head.html");
+    </script>
+</body>
+
+</html>

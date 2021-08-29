@@ -9,74 +9,83 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Register</title>
     <link rel="stylesheet" type="text/css" href="css/login.css">
+ <script src="js/service.js"></script>
+<script src="js/validator.js"></script>
+<script src="js/password.js"></script>
 </head>
+
 <body>
-    <!-- <h1>Register</h1><br> -->
-  <div class="loginbox">
-    <img src="Images/ava.jpg" class="avatar" alt="Image error">
-    <h1>Register Here</h1><br>
+<div class="name">
+    <!-- <img src="/assets/images/user.png" alt="UserImage" class="user"> -->
+    <h1>Registration Form</h1>
     <form onsubmit="register()">
-<label for="email">Email*</label><br>
-<input placeholder="Email Address" type="email" id="email"required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="email must end with @gmail.com"> <br>
-<label for="password">Password*</label><br>
-<input placeholder="Password" type="password" id="password"required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" > <br>
-<label for="confirmpassword">Confirmpassword*</label><br>
-<input placeholder="Confirm Password" type="password" id="confirmpassword"required> <br>
+        <table cellpadding="10" aria-describedby="mydesc">
 
-<button type="submit">Register</button>
-<p class="backlink">Already have an account?  <a href="login.html">Login</a></p>
+          <tr>
+            <th scope="col">
+                <label>UserName</label>
+            </th>
+            <td>
+                <input type="text" id="userName" placeholder="Username" required autocomplete="off">
+            </td>
+            </td>
+        </tr>
+            <tr>
+
+                <th scope="col">
+                    <label>Mobile Number</label>
+                </th>
+
+                <td>
+                    <input type="tel" id="mobilenumber" placeholder="Mobile number" pattern="[789][0-9]{9}"
+                        required autocomplete="off">
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">
+                    Date of Birth
+                </th>
+                <td>
+                    <input type="date" id="dob" name="date" required>
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">
+                    <label>Email-ID</label>
+                </th>
+                <td>
+                    <input type="email" id="email" placeholder="Email-ID" required autocomplete="off">
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="col">
+                    <label>Password</label>
+                </th>
+                <td>
+                    <input type="password" minlength="8" maxlength="15" id="userPassword" placeholder="Password"
+                        required autocomplete="off">
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">
+                    <label>Confirm Password</label>
+                </th>
+                <td>
+                    <input type="password" minlength="8" maxlength="15" id="confirmPassword" placeholder="Password"
+                        minlength="8" required autocomplete="off">
+                </td>
+            </tr>
+        </table>
+
+        <div class="buttons">
+            <button type="reset" id="reset" value="Reset">Reset</button>&nbsp;&nbsp;&nbsp;
+            <button type="Submit" id="submit" value="Submit">Submit</button>
+        </div>
+    </form>
 </div>
-  </form>
-</div>
-</div>
-<script src="js/jquery.min.js"></script>
-<script src="js/service.js"></script>
-<script>
-
-function register() {
-  event.preventDefault();
-  const email = document.querySelector("#email").value;
-  const password = document.querySelector("#password").value;
-  const confirmpassword = document.querySelector("#confirmpassword").value;
-
-
-  if (email == "" || email == null || email.trim() == "") {
-                alert("invalid name");
-            }
-            if (password.length < 8) {
-                alert("Password must be alteast 8 Character");
-            }
-            else 
-                if (password != confirmpassword) {
-                    alert("Password does not match");
-                }  
-                else {
-                     // backend
-                     let registerObj = {
-
-                        "email": email,
-                        "password": password,
-                        "confirmpassword": confirmpassword
-                          };
-
-                    console.log(registerObj); //for printing in console 
-
-              userService. register(registerObj).then(res => 
-              {
-                        let data=res.data;
-                        console.log(data);//printing in console // for user purpose
-                        alert("Registration is Successful");
-                        window.location.href = "Login.html";
-                    }).catch(err => {
-                        console.error(err.response.data);
-                        alert("Unable to register");
-                    });
-
-                }
-              }
-                
-</script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.6/dayjs.min.js" integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/register.js"></script>
 </body>
 
 </html>

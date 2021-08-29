@@ -1,22 +1,56 @@
 
-<link rel="stylesheet" href="head.css">
+  <link rel="stylesheet" href="css/head.css">
+
+
   <div class="header">
     <a href="index.html" class="logo">TreasuryBank</a>
     <div class="header-right">
-      <!-- <a class="active" href="">h</a> -->
-      <ul><a href="accountregister.html">Account Opening</a>
-      <a href="customer.html">NetBanking</a>
-      <a href="Login.html">Login</a>
-      <a href="register.html">Register</a>
-      <a onclick="logout()">Logout</a>
-    </ul>
+      <a href="createaccount.html">CreateAccount</a>
+      <a href="listuser.html">Listuser</a>
+      <a href="NetBanking">NetBanking</a>
+      <a href="logout.html">logout</a>
     </div>
   </div>
-  <!-- <script src="js/head.js"></script> -->
-  <!-- <div style="padding-left:20px">
-    <h1>Responsive Header</h1>
-    <p>Resize the browser window to see the effect.</p>
-    <p>Some content..</p>
-  </div> -->
-  
 
+
+
+
+
+
+  <!-- <script>
+    function checkLogin() {
+        let userStr = localStorage.getItem("Logged_in_users");
+        let user = userStr != null ? JSON.parse(userStr) : null;
+        if (user != null) {
+            document.querySelector("#loggedIn").innerHTML = "Welcome <a href = 'index.html' class='user'>" + user.name + "</a> &nbsp;";
+        }
+        // else{
+
+        // }
+
+    }
+    checkLogin();
+    function logout() {
+
+        localStorage.removeItem("Logged_in_users");
+        window.location.href = "login.html"
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
