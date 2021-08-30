@@ -43,16 +43,30 @@
                             <input type="text" id="fatherName" pattern="[A-Za-z]{3,30}" placeholder="Fathername"
                                 autocomplete="off" required>
                         </td>
-                        
+
                         <th scope="col">
                             <label>Mobile Number: </label>
                         </th>
                         <td>
-                            <input type="number" id="mobilenumber" pattern="" placeholder=""
-                                autocomplete="off" required>
+                            <input type="number" id="mobilenumber" pattern="" placeholder="" autocomplete="off"
+                                required>
                         </td>
-                        
+
                     </tr>
+                    <th>
+                        <label>Email Id</label>
+
+                    </th>
+                    <td>
+                        <input type="email" id="email" placeholder="Enter Email Address" autocomplete="off" required>
+                    </td>
+                    <th scope="col">
+                        <label>Aadhar Number*</label>
+                    </th>
+                    <td>
+                        <input type="number" id="aadhar" maxlength="12" placeholder="Enter aadhar number"
+                            autocomplete="off" required>
+                    </td>
                     <tr>
                         <th scope="col">
                             <label>Date Of Birth: </label>
@@ -89,8 +103,7 @@
                             <label>Same as Current address</label>
                         </th>
                         <td>
-                            <input type="checkbox" id="check" onchange="address()"
-                                value="Same as Current address">
+                            <input type="checkbox" id="check" onchange="address()" value="Same as Current address">
                         </td>
                         <th scope="col">
                             <label>If Others</label>
@@ -154,15 +167,6 @@
 
                         </td>
                     </tr>
-                    <tr>
-                        <th scope="col">
-                            <label>Aadhar Number*</label>
-                        </th>
-                        <td>
-                            <input type="number" id="aadhar" maxlength="12" placeholder="Enter aadhar number"
-                                autocomplete="off" required>
-                        </td>
-                    </tr>
                 </table>
                 <div class="submit">
                     <button type="reset" id="submit" value="Reset">Reset</button>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -174,7 +178,7 @@
             <script>
                 $("#head").load("head.html");
             </script>
-            
+
         </div>
     </main>
 

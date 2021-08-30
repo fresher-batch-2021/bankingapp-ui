@@ -1,12 +1,13 @@
 function account() {
     event.preventDefault();
-    alert("haai");
-        const firstName = document.querySelector("#firstName").value;
+   
+    const firstName = document.querySelector("#firstName").value;
     const lastName = document.querySelector("#lastName").value;
     const fatherName = document.querySelector("#fatherName").value;
+    const email = document.querySelector("#email").value;
     const gender = document.querySelector("#gender").value;
     const dob = document.querySelector("#dob").value;
-    const mobilenumber=document.querySelector("#mobilenumber").value;
+    const mobilenumber = document.querySelector("#mobilenumber").value;
     const state = document.querySelector("#state").value;
     const currentAddress = document.querySelector("#currentAddress").value;
     const permanentAddress = document.querySelector("#permanentAddress").value;
@@ -24,7 +25,11 @@ function account() {
     } else if (fatherName == "") {
         alert("Fathername cannot be blank");
         return false;
-    } 
+    }
+    else if (email == "") {
+        alert("Email-Id Cannot be blank");
+        return false;
+    }
     else if (dob == "") {
         alert("DateOfBirth cannot be blank");
         return false;
@@ -33,7 +38,7 @@ function account() {
         alert("mobilenumber cannot be blank");
         return false;
     }
-     else if (gender == "") {
+    else if (gender == "") {
         alert("Gender cannot be blank");
         return false;
     } else if (state == "") {
@@ -59,8 +64,9 @@ function account() {
             "firstName": firstName,
             "lastName": lastName,
             "fatherName": fatherName,
+            "email": email,
             "DOB": dob,
-            "mobilenumber":mobilenumber,
+            "mobilenumber": mobilenumber,
             "gender": gender,
             "state": state,
             "currentAddress": currentAddress,

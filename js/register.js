@@ -9,14 +9,17 @@ function register() {
     const email = document.querySelector("#email").value;
     const userPassword = document.querySelector("#userPassword").value;
     const confirmPassword = document.querySelector("#confirmPassword").value;
+
+
+
+
     try {
-        alert(userName);
-        alert(mobilenumber);
         let registerObj = {
             reguserName:userName,
             regmobilenumber: mobilenumber,
             regemail: email
         };
+        console.log(registerObj);
         let formData = {
             username: userName,
             dob: dob,

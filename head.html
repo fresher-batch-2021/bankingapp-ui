@@ -1,56 +1,64 @@
-
   <link rel="stylesheet" href="css/head.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="js/head.js"></script>
+  <header id = "head">
+      
+      <div class="banking">
+          <ul>
+          <a href="index.html" class="heading"> TreasuryBank</a>
+          <a class="menu" href="createaccount.html" onclick="account()" >CreateAccount</a>
+          <a class="menu" href="listuser.html" >ProfileView</a>
+          
+
+           <li class="nav-item" data-loggedin="false">
+              <a class="nav-link" href="logout.html">Logout</a>
+          </li>
+          <!-- <li class="nav-item" data-loggedin="false">
+              <a class="nav-link" href="register.html">Register</a>
+          </li>
+          -->
+          <li class="nav-item" data-loggedin="true">
+              <a class="nav-link" href="logout.html" onclick="logout()">Logout</a>
+          </li>
+          <li class="nav-item" data-loggedin="true">
+              <a class="nav-link" href="" id="profile"> Welcome {{user.username}}</a>
+          </li>
+          
+          </ul>
+      </div>
+      
+  </header>
+  
+  <script>
+      let user = JSON.parse(localStorage.getItem("logged_in_users"));
+      console.log("head", user);
+      // for(let users of user){
+          console.log(user);
+  
+          if (user != null) {
+          //if user is logged in, 
+          $(".nav-item[data-loggedin='true']").show();
+          $(".nav-item[data-loggedin='false']").hide();
+          $("#profile").html("Welcome " + user.username + "!!!");
+          if (user.role == "user") {
+              $(".nav-item[data-roles='admin']").hide();
+          }
+  
+      } else {
+          //if user yet to logged in, 
+          $(".nav-item[data-loggedin='false']").show();
+          $(".nav-item[data-loggedin='true']").hide();
+      }
+  
+          
+      // }
+      
+  
+      function logout() {
+          localStorage.clear();
+          window.location.href = "login.html";
+      }
+  </script>
 
 
-  <div class="header">
-    <a href="index.html" class="logo">TreasuryBank</a>
-    <div class="header-right">
-      <a href="createaccount.html">CreateAccount</a>
-      <a href="listuser.html">Listuser</a>
-      <a href="NetBanking">NetBanking</a>
-      <a href="logout.html">logout</a>
-    </div>
-  </div>
-
-
-
-
-
-
-  <!-- <script>
-    function checkLogin() {
-        let userStr = localStorage.getItem("Logged_in_users");
-        let user = userStr != null ? JSON.parse(userStr) : null;
-        if (user != null) {
-            document.querySelector("#loggedIn").innerHTML = "Welcome <a href = 'index.html' class='user'>" + user.name + "</a> &nbsp;";
-        }
-        // else{
-
-        // }
-
-    }
-    checkLogin();
-    function logout() {
-
-        localStorage.removeItem("Logged_in_users");
-        window.location.href = "login.html"
-    }
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- -->
+  

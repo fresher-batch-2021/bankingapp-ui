@@ -109,8 +109,14 @@
                         <td>
                             <input type="text" id="aadharNumber" autocomplete="off" value="">
                         </td>
+                        <th scope="col">
+                            <label>Email-ID</label>
+                        </th>
+                        <td>
+                            <input type="text" id="email" autocomplete="off">
+                        </td>
                     </tr>
-                    
+
                 </table>
                 <div class="submit">
                     <input type="button" onclick="editApplication()" id="submit" value="Update">
@@ -126,11 +132,12 @@
         let reg = JSON.parse(localStorage.getItem('regform'));
 
         console.log(userData);
-      
+
 
         const firstName = document.querySelector("#firstName").value = userData.firstName;
         const lastName = document.querySelector("#lastName").value = userData.lastName;
         const fatherName = document.querySelector("#fatherName").value = userData.fatherName;
+        const email = document.querySelector("#email").value = userData.email;
         const DOB = document.querySelector("#DOB").value = userData.DOB;
         const motherName = document.querySelector("#mobilenumber").value = userData.mobilenumber;
         const gender = document.querySelector("#gender").value = userData.gender;
@@ -146,10 +153,10 @@
 
 
         function editApplication() {
-            alert("haiiii");
             let customerFirstName = document.querySelector("#firstName").value;
             let customerLastName = document.querySelector("#lastName").value;
             let customerFatherName = document.querySelector("#fatherName").value;
+            let customerEmail = document.querySelector("#email").value;
             let customerDOB = document.querySelector("#DOB").value;
             let customermobilenumber = document.querySelector("#mobilenumber").value;
             let customerGender = document.querySelector("#gender").value;
@@ -161,12 +168,13 @@
             let customerCommunity = document.querySelector("#community").value;
             let customerAadharNumber = document.querySelector("#aadharNumber").value;
 
-          
-                console.log(customerAadharNumber);
+
+            console.log(customerAadharNumber);
             let customerObj = {
                 "firstName": customerFirstName,
                 "lastName": customerLastName,
                 "fatherName": customerFatherName,
+                "email": customerEmail,
                 "DOB": customerDOB,
                 "mobilenumber": customermobilenumber,
                 "gender": customerGender,
@@ -177,19 +185,19 @@
                 "religion": customerReligion,
                 "community": customerCommunity,
                 "aadharNumber": customerAadharNumber,
-                
+
             }
             console.log(customerObj);
             alert("Updated");
-            
+
             localStorage.setItem('editform', JSON.stringify(customerObj));
-            
+
             window.location.href = "profile.html";
             alert("haaaiiiii2")
-          
+
         }
     </script>
-   
+
     <script>
         $("#head").load("head.html");
     </script>

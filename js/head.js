@@ -1,9 +1,9 @@
 localStorage.setItem("IsLoggedIn",false);
-let login=localStorage.getItem("IsLoggedIn");
+// let login=localStorage.getItem("IsLoggedIn");
 
 if(login=="false"){
     
-    // alert("Need to login first");
+    alert("Need to login first");
     window.location.href="login.html";
 }
 function logout(){

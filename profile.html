@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <header id="header"></header>
+    <header id="head"></header>
     <main>
         <div class="userDetails">
             <form>
@@ -60,13 +60,13 @@
                         </td>
                     </tr>
 
-
-                    <th scope="col">
-                        <label>Gender</label>
-                    </th>
-                    <td>
-                        <label id="gender"></label>
-                    </td>
+                    <tr>
+                        <th scope="col">
+                            <label>Gender</label>
+                        </th>
+                        <td>
+                            <label id="gender"></label>
+                        </td>
                     </tr>
                     <tr>
                         <th scope="col">
@@ -117,6 +117,12 @@
                         <td>
                             <label id="aadharNumber"></label>
                         </td>
+                        <th scope="col">
+                            <label>Email-ID</label>
+                        </th>
+                        <td>
+                            <label id="email"></label>
+                        </td>
                     </tr>
 
 
@@ -124,8 +130,7 @@
                 <div class="submit">
                     <a href="edit.html" id="submit">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
 
-                    <button type="submit" id="submit"
-                        value="submit">Submit</button>
+                    <button type="submit" id="submit" value="submit">Submit</button>
                 </div>
         </div>
         </form>
@@ -135,10 +140,11 @@
         //Get values from Personal Information File
         let userData = JSON.parse(localStorage.getItem('userData'));
         console.log("value", userData);
-        console.log(userData.mobilenumber);
+        console.log(userData.email);
         document.querySelector("#firstName").innerHTML = userData.firstName;
         document.querySelector("#lastName").innerHTML = userData.lastName;
         document.querySelector("#fatherName").innerHTML = userData.fatherName;
+        document.querySelector("#email").innerHTML = userData.email;
         document.querySelector("#dateOfBirth").innerHTML = userData.DOB;
         document.querySelector("#gender").innerHTML = userData.gender;
         document.querySelector("#mobilenumber").innerHTML = userData.mobilenumber;
@@ -157,8 +163,9 @@
         document.querySelector("#firstName").innerHTML = formDetails.firstName;
         document.querySelector("#lastName").innerHTML = formDetails.lastName;
         document.querySelector("#fatherName").innerHTML = formDetails.fatherName;
+        document.querySelector("#email").innerHTML = formDetails.email;
         document.querySelector("#dateOfBirth").innerHTML = formDetails.DOB;
-        document.querySelector("#mobilenumber").innerHTML = userData.mobilenumber;
+        document.querySelector("#mobilenumber").innerHTML = formDetails.mobilenumber;
         document.querySelector("#gender").innerHTML = formDetails.gender;
         document.querySelector("#currentAddress").innerHTML = formDetails.currentAddress;
         document.querySelector("#permanentAddress").innerHTML = formDetails.permanentAddress;
@@ -176,6 +183,7 @@
                 "firstName": formDetails.firstName,
                 "lastName": formDetails.lastName,
                 "fatherName": formDetails.fatherName,
+                "email": formDetails.email,
                 "dateOfBirth": formDetails.DOB,
                 "mobilenumber": formDetails.mobilenumber,
                 "gender": formDetails.gender,
@@ -187,26 +195,20 @@
                 "currrentAddress": formDetails.currentAddress,
                 "permanentAddress": formDetails.currentAddress,
                 "state": formDetails.state,
-                "branch": formDetails.district,
+                "branch": formDetails.branch,
             }
 
         }
         console.log(formObj);
 
         try {
-            // let viewApplication = {
-            //     "name": registerDetails.regName,
-            //     "mobilenumber": formDetails.district,
-            //     "email": registerDetails.regEmail,
-            //     "status": "pending"
-            // }
-            // console.log("View-Application", viewApplication);
+
 
             let applicationData = {
-                name: formDetails.regName,
+                name: formDetails.firstName,
                 branch: formDetails.branch,
                 mobilenumber: formDetails.mobilenumber,
-                // email: registerDetails.regEmail,
+                email: formDetails.email,
                 status: "Pending"
             }
 
@@ -216,7 +218,8 @@
             const url = "https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/newaccountregister";
 
             axios.post(url, applicationData, {
-            headers: { Authorization: basicAuth }}).then(res=>{
+                headers: { Authorization: basicAuth }
+            }).then(res => {
                 let data = res.data;
                 console.log(data);
                 alert("Please Logout Before Leaving");
@@ -233,6 +236,9 @@
 
     </script>
 
+<script>
+    $("#head").load("head.html");
+    </script>
 </body>
 
 </html>

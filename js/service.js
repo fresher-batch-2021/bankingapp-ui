@@ -34,7 +34,7 @@ return (axios.post(url,selectedData,{headers:{'Authorization':basicAuth}}));
     }
 
 
-    static listuser(emailId)
+    static listuser(email)
     {
 
         const dbusername = "apikey-v2-zyhv5j7i61imeby1qya0ma2ejrc0fkf9n4e4bl3w5gn";
@@ -43,7 +43,7 @@ return (axios.post(url,selectedData,{headers:{'Authorization':basicAuth}}));
 
         const userData = {
             selector: {
-                email: emailId
+                email: email
             },
             fields: ["_id", "name", "branch", "email", "status"]
         }

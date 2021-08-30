@@ -3,7 +3,7 @@ function login() {
 
   const email = document.querySelector("#email").value;
   const password = document.querySelector("#password").value;
-
+  
 
   try{
       Validator.isValidString(email,"Email Cannot be Blank");
@@ -11,7 +11,8 @@ function login() {
 
       let userObj={
           "email":email,
-          "password":password
+          "password":password,
+    
       };
       console.log(userObj);
       userService.login(email,password).then(res=>{
@@ -24,7 +25,7 @@ function login() {
         else {
             const user = data[0];
             alert("Login Successful");
-            // localStorage.setItem('userName', JSON.stringify(email));
+             localStorage.setItem('userName', JSON.stringify(user));
             window.location.href = "index.html";
         }
 
