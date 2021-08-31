@@ -1,64 +1,58 @@
-  <link rel="stylesheet" href="css/head.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="js/head.js"></script>
-  <header id = "head">
-      
-      <div class="banking">
-          <ul>
-          <a href="index.html" class="heading"> TreasuryBank</a>
-          <a class="menu" href="createaccount.html" onclick="account()" >CreateAccount</a>
-          <a class="menu" href="listuser.html" >ProfileView</a>
-          
+<link rel="stylesheet" href="css/head.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="js/head.js"></script>
+<header id="head">
 
-           <li class="nav-item" data-loggedin="false">
-              <a class="nav-link" href="logout.html">Logout</a>
-          </li>
-          <!-- <li class="nav-item" data-loggedin="false">
-              <a class="nav-link" href="register.html">Register</a>
-          </li>
-          -->
-          <li class="nav-item" data-loggedin="true">
-              <a class="nav-link" href="logout.html" onclick="logout()">Logout</a>
-          </li>
-          <li class="nav-item" data-loggedin="true">
-              <a class="nav-link" href="" id="profile"> Welcome {{user.username}}</a>
-          </li>
-          
-          </ul>
-      </div>
-      
-  </header>
-  
-  <script>
-      let user = JSON.parse(localStorage.getItem("logged_in_users"));
-      console.log("head", user);
-      // for(let users of user){
-          console.log(user);
-  
-          if (user != null) {
-          //if user is logged in, 
-          $(".nav-item[data-loggedin='true']").show();
-          $(".nav-item[data-loggedin='false']").hide();
-          $("#profile").html("Welcome " + user.username + "!!!");
-          if (user.role == "user") {
-              $(".nav-item[data-roles='admin']").hide();
-          }
-  
-      } else {
-          //if user yet to logged in, 
-          $(".nav-item[data-loggedin='false']").show();
-          $(".nav-item[data-loggedin='true']").hide();
-      }
-  
-          
-      // }
-      
-  
-      function logout() {
-          localStorage.clear();
-          window.location.href = "login.html";
-      }
-  </script>
+    <div class="banking">
+        <ul>
+            <a href="index.html" class="heading"> TreasuryBank</a>
+            <a class="menu" href="createaccount.html" onclick="account()">CreateAccount</a>
+            <a class="menu" href="listuser.html">ProfileView</a>
+            <a class="menu" href="netbanking.html">Netbanking</a>
 
 
-  
+            <li class="nav-item" data-loggedin="false">
+                <a class="nav-link" href="logout.html">Logout</a>
+            </li>
+            <li class="nav-item" data-loggedin="true">
+                <a class="nav-link" href="logout.html" onclick="logout()">Logout</a>
+            </li>
+            <li class="nav-item" data-loggedin="true">
+                <a class="nav-link" href="" id="profile"> Welcome {{user.username}}</a>
+            </li>
+
+        </ul>
+    </div>
+
+</header>
+
+<script>
+    let user = JSON.parse(localStorage.getItem("logged_in_users"));
+    console.log("head", user);
+    // for(let users of user){
+    console.log(user);
+
+    if (user != null) {
+        //if user is logged in, 
+        $(".nav-item[data-loggedin='true']").show();
+        $(".nav-item[data-loggedin='false']").hide();
+        $("#profile").html("Welcome " + user.username + "!!!");
+        if (user.role == "user") {
+            $(".nav-item[data-roles='admin']").hide();
+        }
+
+    } else {
+        //if user yet to logged in, 
+        $(".nav-item[data-loggedin='false']").show();
+        $(".nav-item[data-loggedin='true']").hide();
+    }
+
+
+    // }
+
+
+    function logout() {
+        localStorage.clear();
+        window.location.href = "login.html";
+    }
+</script>

@@ -68,7 +68,8 @@ try {
         "branch": formDetails.branch,
         "mobilenumber": formDetails.mobilenumber,
         "email": formDetails.email,
-        "status": "pending"
+        "status": "pending",
+        "initialBalance":"0" 
     }
     console.log("View-Application", viewApplication);
 
@@ -77,7 +78,8 @@ try {
         branch: formDetails.branch,
         mobilenumber: formDetails.mobilenumber,
         email: formDetails.email,
-        status: "Pending"
+        status: "Pending",
+        initialBalance:0
     }
 
     userService.addService(applicationData).then(res => {

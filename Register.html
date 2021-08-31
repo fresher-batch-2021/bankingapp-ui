@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,85 +9,85 @@
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="css/login.css">
- <script src="js/service.js"></script>
-<script src="js/validator.js"></script>
-<script src="js/password.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/validator.js"></script>
+    <script src="js/password.js"></script>
 </head>
 
 <body>
-<div class="name">
-    <!-- <img src="/assets/images/user.png" alt="UserImage" class="user"> -->
-    <h1>Registration Form</h1>
-    <form onsubmit="register()">
-        <table cellpadding="10" aria-describedby="mydesc">
+    <div class="name">
+        <h1>Registration Form</h1>
+        <form onsubmit="register()">
+            <table cellpadding="10" aria-describedby="mydesc">
 
-          <tr>
-            <th scope="col">
-                <label>UserName</label>
-            </th>
-            <td>
-                <input type="text" id="userName" placeholder="Username" required autocomplete="off">
-            </td>
-            </td>
-        </tr>
-            <tr>
+                <tr>
+                    <th scope="col">
+                        <label>UserName</label>
+                    </th>
+                    <td>
+                        <input type="text" id="userName" placeholder="Username" required autocomplete="off">
+                    </td>
+                    </td>
+                </tr>
+                <tr>
 
-                <th scope="col">
-                    <label>Mobile Number</label>
-                </th>
+                    <th scope="col">
+                        <label>Mobile Number</label>
+                    </th>
 
-                <td>
-                    <input type="tel" id="mobilenumber" placeholder="Mobile number" pattern="[789][0-9]{9}"
-                        required autocomplete="off">
-                </td>
-            </tr>
-            <tr>
-                <th scope="col">
-                    Date of Birth
-                </th>
-                <td>
-                    <input type="date" id="dob" name="date" required>
-                </td>
-            </tr>
-            <tr>
-                <th scope="col">
-                    <label>Email-ID</label>
-                </th>
-                <td>
-                    <input type="email" id="email" placeholder="Email-ID" required autocomplete="off">
-                </td>
-            </tr>
-            
-            <tr>
-                <th scope="col">
-                    <label>Password</label>
-                </th>
-                <td>
-                    <input type="password" minlength="8" maxlength="15" id="userPassword" placeholder="Password"
-                        required autocomplete="off">
-                </td>
-            </tr>
-            <tr>
-                <th scope="col">
-                    <label>Confirm Password</label>
-                </th>
-                <td>
-                    <input type="password" minlength="8" maxlength="15" id="confirmPassword" placeholder="Password"
-                        minlength="8" required autocomplete="off">
-                </td>
-            </tr>
-            
-        </table>
+                    <td>
+                        <input type="tel" id="mobilenumber" placeholder="Mobile number" pattern="[789][0-9]{9}" required
+                            autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col">
+                        Date of Birth
+                    </th>
+                    <td>
+                        <input type="date" id="dob" name="date" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col">
+                        <label>Email-ID</label>
+                    </th>
+                    <td>
+                        <input type="email" id="email" placeholder="Email-ID" required autocomplete="off">
+                    </td>
+                </tr>
 
-        <div class="buttons">
-            <button type="reset" id="reset" value="Reset">Reset</button>&nbsp;&nbsp;&nbsp;
-            <button type="Submit" id="submit" value="Submit">Submit</button>
-        </div>
-    </form>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.6/dayjs.min.js" integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="js/register.js"></script>
+                <tr>
+                    <th scope="col">
+                        <label>Password</label>
+                    </th>
+                    <td>
+                        <input type="password" minlength="8" maxlength="15" id="userPassword" placeholder="Password"
+                            required autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col">
+                        <label>Confirm Password</label>
+                    </th>
+                    <td>
+                        <input type="password" minlength="8" maxlength="15" id="confirmPassword" placeholder="Password"
+                            minlength="8" required autocomplete="off">
+                    </td>
+                </tr>
+
+            </table>
+
+            <div class="buttons">
+                <button type="reset" id="reset" value="Reset">Reset</button>&nbsp;&nbsp;&nbsp;
+                <button type="Submit" id="submit" value="Submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.6/dayjs.min.js"
+        integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/register.js"></script>
 </body>
 
 </html>

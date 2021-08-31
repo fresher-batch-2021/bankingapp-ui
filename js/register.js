@@ -36,7 +36,7 @@ function register() {
         Validator.isValidString(userName, "UserName Cannot be Blank");
         Password.isValidPassword(userPassword, "Password must contain atleast 8 Characters");
         Password.isValidPassword(confirmPassword, "Password must contain atleast 8 Characters");
-        alert("haiiii")
+    
         userService.register(formData).then(res => {
             let data = res.data;
             console.log(data);
@@ -57,6 +57,7 @@ function register() {
 
 function setDate() {
      let previousDay = dayjs().subtract(1, 'day').toDate();
+
     let today = previousDay.toJSON().substr(0, 10);
     document.querySelector("#dob").setAttribute("max", today);
 

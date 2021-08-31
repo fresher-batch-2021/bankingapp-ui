@@ -45,7 +45,7 @@ return (axios.post(url,selectedData,{headers:{'Authorization':basicAuth}}));
             selector: {
                 email: email
             },
-            fields: ["_id", "name", "branch", "email", "status"]
+            fields: ["_id", "name", "branch", "email", "status","initialBalance"]
         }
 
         const url="https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/newaccountregister/_find";

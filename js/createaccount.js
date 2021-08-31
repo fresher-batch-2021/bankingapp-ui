@@ -35,7 +35,7 @@ function account() {
         return false;
     }
     else if (mobilenumber == "") {
-        alert("mobilenumber cannot be blank");
+        alert("Mobilenumber cannot be blank");
         return false;
     }
     else if (gender == "") {

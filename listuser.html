@@ -11,6 +11,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/service.js"></script>
     <script src="js/listuser.js"> </script>
+    <script src="js/jquery.min.js"></script>
+
 
 </head>
 
@@ -18,6 +20,16 @@
     <header id="head"></header>
     <main>
         <div class="searchBar">
+            <label>Deposit</label>
+            <br>
+            <input type="number" id="deposit" placeholder="Enter amount to deposit" required autocomplete="off">
+            <label>Click Deposit Button</label>
+            <br>
+            <label>Withdraw</label>
+            <br>
+            <input type="number" id="withdraw" placeholder="Enter amount to withdraw" required autocomplete="off">
+            <label>Click Withdraw Button</label>
+            <br>
             <h1>Submitted-Applications</h1>
             <table border="1" aria-describedby="mydesc" id="myTable">
                 <thead>
@@ -27,18 +39,20 @@
                         <th id="searchBar">Branch</th>
                         <th id="searchBar">Email-ID</th>
                         <th id="searchBar">Status</th>
+                        <th id="searchBar">InitialBalance</th>
+                        <th id="searchBar">Deposit</th>
+                        <th id="searchBar">Withdraw</th>
                     </tr>
                 </thead>
                 <tbody id="applicationTable"></tbody>
             </table>
         </div>
-        
+
     </main>
-   
+
     <script>
         $("#head").load("head.html");
-        </script>
-     <script src="jquery.min.js"></script>
+    </script>
 </body>
 
 </html>
