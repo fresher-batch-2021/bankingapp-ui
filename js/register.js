@@ -56,7 +56,7 @@ function register() {
 }
 
 function setDate() {
-     let previousDay = dayjs().subtract(1, 'day').toDate();
+     let previousDay = dayjs().subtract(11, 'year').toDate();
 
     let today = previousDay.toJSON().substr(0, 10);
     document.querySelector("#dob").setAttribute("max", today);

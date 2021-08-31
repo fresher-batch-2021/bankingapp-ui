@@ -25,9 +25,9 @@ function displayTasks(formValues) {
                 </td><td>${taskObj.email}</td>
                 <td>${taskObj.status}</td>
                 <td>${taskObj.initialBalance}</td>
-                <td><button type='button' onclick="depositAmount('${taskObj._id}','${taskObj.initialBalance}')">Deposit
+                <td><button type='button' onclick="depositAmount('${taskObj._id}','${taskObj.initialBalance}','CREDIT')">Deposit
                 </button></td>
-                <td><button type='button' onclick="withdrawAmount('${taskObj._id}','${taskObj.initialBalance}')">Withdraw
+                <td><button type='button' onclick="withdrawAmount('${taskObj._id}','${taskObj.initialBalance}','DEBIT')">Withdraw
                 </button></td>
                 
                 </tr>`;
@@ -40,7 +40,7 @@ const dbusername = "apikey-v2-zyhv5j7i61imeby1qya0ma2ejrc0fkf9n4e4bl3w5gn";
 const dbpassword = "ec6094ae0714dc7a5ffc50a86924bef3";
 const basicAuth = "Basic " + btoa(dbusername + ":" + dbpassword);
 
-function depositAmount(id, balance) {
+function depositAmount(id, balance, action) {
     const deposit = document.querySelector("#deposit").value;
     const amount = `${deposit}`
     const url = "https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/newaccountregister/" + id;
@@ -48,7 +48,7 @@ function depositAmount(id, balance) {
 
     axios.get(url, { headers: { 'Authorization': basicAuth } }).then(result => {
         const applicationObj = result.data;
-
+        applicationObj.action = action;
         applicationObj.initialBalance = parseInt(applicationObj.initialBalance) + parseInt(amount);
         const updateURL = url + "?rev=" + applicationObj._rev;
         console.log(updateURL);
@@ -60,10 +60,10 @@ function depositAmount(id, balance) {
         });
 
     }).catch(err => {
-        alert("failed");
+        alert("Failed");
     });
 }
-function withdrawAmount(id, balance) {
+function withdrawAmount(id, balance, action) {
 
     const withdraw = document.querySelector("#withdraw").value;
     const withdrawAmount = `${withdraw}`
@@ -72,7 +72,7 @@ function withdrawAmount(id, balance) {
 
     axios.get(url, { headers: { 'Authorization': basicAuth } }).then(result => {
         const applicationObj = result.data;
-
+        applicationObj.action = action;
         applicationObj.initialBalance = parseInt(applicationObj.initialBalance) - parseInt(withdrawAmount);
         const updateURL = url + "?rev=" + applicationObj._rev;
         console.log(updateURL);

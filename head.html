@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="css/head.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="js/head.js"></script>
+<!-- <script src="js/head.js"></script> -->
 <header id="head">
 
     <div class="banking">
@@ -9,11 +9,11 @@
             <a class="menu" href="createaccount.html" onclick="account()">CreateAccount</a>
             <a class="menu" href="listuser.html">ProfileView</a>
             <a class="menu" href="netbanking.html">Netbanking</a>
-
-
+            <a class="menu" href="transactionhistory.html">TransactionHistory</a>
+<!-- 
             <li class="nav-item" data-loggedin="false">
                 <a class="nav-link" href="logout.html">Logout</a>
-            </li>
+            </li> -->
             <li class="nav-item" data-loggedin="true">
                 <a class="nav-link" href="logout.html" onclick="logout()">Logout</a>
             </li>
@@ -26,7 +26,7 @@
 
 </header>
 
-<script>
+<!-- <script>
     let user = JSON.parse(localStorage.getItem("logged_in_users"));
     console.log("head", user);
     // for(let users of user){
@@ -55,4 +55,4 @@
         localStorage.clear();
         window.location.href = "login.html";
     }
-</script>
+</script> -->

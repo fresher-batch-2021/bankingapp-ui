@@ -69,19 +69,20 @@ try {
         "mobilenumber": formDetails.mobilenumber,
         "email": formDetails.email,
         "status": "pending",
-        "initialBalance":"0" 
+        "initialBalance": "0"
     }
     console.log("View-Application", viewApplication);
-
+    let date = new Date();
     let applicationData = {
         name: formDetails.firstName,
         branch: formDetails.branch,
         mobilenumber: formDetails.mobilenumber,
         email: formDetails.email,
         status: "Pending",
-        initialBalance:0
+        initialBalance: "0",
+        appiledDate: date
     }
-
+    console.log("Data", applicationData);
     userService.addService(applicationData).then(res => {
         let data = res.data;
         console.log(data);

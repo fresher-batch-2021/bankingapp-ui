@@ -43,7 +43,7 @@ function displayTasks(tableData) {
 
 function updateStatus(id, status) {
     //call backend api and update status
-    //Update available Seats
+    //Update customeraccounts
     const dbusername = "apikey-v2-zyhv5j7i61imeby1qya0ma2ejrc0fkf9n4e4bl3w5gn";
     const dbpassword="ec6094ae0714dc7a5ffc50a86924bef3";
     const basicAuth = "Basic " + btoa(dbusername + ":" + dbpassword);

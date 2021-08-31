@@ -24,7 +24,7 @@
 }
 
 #services{
-    background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.1)),url(img/coin.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.1)),url('../images/transfer.jpg');
     background-size :cover;
     background-position: center;
     color: #efefef !important;
@@ -154,7 +154,7 @@ h1::after{
     transition: 0.5s;
 }
 #promo{
-    background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.1)),url(./img/transfer.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.1)),url('../images/transfer.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
