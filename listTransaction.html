@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View-Application</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/service.js"></script>
+    <script src="js/listTransaction.js"> </script>
+
+</head>
+
+<body>
+    <header id="head"></header>
+    <main>
+        <div class="searchBar">
+            <table border="1" aria-describedby="mydesc" id="myTable">
+                <thead>
+                    <tr>
+                        <th id="searchBar">Date</th>
+                        <th id="searchBar">Application-ID</th>
+                        <th id="searchBar">Name</th>
+                        <th id="searchBar">Branch</th>
+                        <th id="searchBar">Contact No</th>
+                        <th id="searchBar">BankBalance</th>
+                        <th id="searchBar">Amount</th>
+                        <th id="searchBar">Credit</th>
+                        <th id="searchBar">Debit</th>
+                       
+                    </tr>
+                </thead>
+                <tbody id="transactionDetails"></tbody>
+            </table>
+        </div>
+    </main>
+</body>
+
+</html>
