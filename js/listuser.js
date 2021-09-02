@@ -94,14 +94,17 @@ function history(applicationObj, action, amount) {
     console.log("value: ", applicationObj);
 
     if (action == "CREDIT") {
-        console.log("amt :", amount);
+        console.log("amount :", amount);
         applicationObj.amount = amount;
+        debit1="-";
+        applicationObj.debit=debit1;
         alert("If works");
         let historyObj = {
 
             name: applicationObj.name,
             branch: applicationObj.branch,
             credit: applicationObj.credit,
+            debit:applicationObj.debit,
             date: applicationObj.date,
             email: applicationObj.email,
             mobilenumber: applicationObj.mobilenumber,
@@ -121,12 +124,14 @@ function history(applicationObj, action, amount) {
         });
     }
     if (action == "DEBIT") {
-        alert("Else Works");
-        console.log("amt :", amount);
+        console.log("amount :", amount);
         applicationObj.amount = amount;
+        credit1="-";
+        applicationObj.credit=credit1;
         let historyObj = {
             name: applicationObj.name,
             branch: applicationObj.branch,
+            credit:applicationObj.credit,
             debit: applicationObj.debit,
             date: applicationObj.date,
             email: applicationObj.email,

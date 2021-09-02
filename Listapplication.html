@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>View-Application</title>
+    <link rel="stylesheet" href="css/table.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -16,23 +18,32 @@
 
 <body>
     <header id="head"></header>
+   
     <main>
-        <div class="searchBar">
-            <table border="1" aria-describedby="mydesc" id="myTable">
-                <thead>
-                    <tr>
-                        <th id="searchBar">Application-ID</th>
-                        <th id="searchBar">Name</th>
-                        <th id="searchBar">Branch</th>
-                        <th id="searchBar">Email-ID</th>
-                        <th id="searchBar">Status</th>
-                        <th id="searchBar">BankBalance</th>
-                    </tr>
-                </thead>
-                <tbody id="applicationTable"></tbody>
-            </table>
-        </div>
+      <h3 class="titles">List All Users</h3>
+        <table id="myTable" class="table-content" aria-describedby="mydesc">
+            <thead class="table-head">
+                <tr>
+                    <th id="searchBar">Application-ID</th>
+                    <th id="searchBar">Name</th>
+                    <th id="searchBar">Branch</th>
+                    <th id="searchBar">Email-ID</th>
+                    <th id="searchBar">Status</th>
+                    <th id="searchBar">BankBalance</th>
+
+
+                </tr>
+            </thead>
+            <tbody id="applicationTable"></tbody>
+        </table>
+
     </main>
+
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $("#head").load("adminhead.html");
+    </script>
+
 </body>
 
 </html>

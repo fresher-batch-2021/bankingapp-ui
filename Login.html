@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    
+    <link rel="stylesheet" href="css/register.css">
     <script src="js/login.js"></script>
     <script src="js/validator.js"></script>
     <script src="js/password.js"></script>
@@ -18,26 +18,49 @@
 
 <body>
 
+   
     <div class="loginbox">
     
         <h1>Login Here</h1>
         <form method="post" target="blank" onsubmit="login()">
-
-
+            <table cellpadding="10" aria-describedby="mydesc">
+            <tr>
+                <th scope="col">
             <label for="email">Email*</label><br>
+                </th>
+                <td>
             <input type="email" name="email" id="email" placeholder="Enter Email " required autocomplete="off"
                 autofocus> <br />
-
+                </td>
+            </tr>
+            <tr>
+                <th scope="col">
             <label for="password">Password*</label><br>
+            </th>
+            <td>
             <input type="password" name="password" id="password" placeholder="Enter Password " required
                 autocomplete="off" autofocus> <br />
-              
-              
+              </td>
+              </tr>
+              <tr>
+                      <th scope="col">
+                    <label for="role">Role:</label>
+                </th>
+                <td>
+                    <input type="radio" name="role" id="role" value="admin" required>Admin
+                    <input type="radio" name="role" id="role" value="user" required>User<br>
 
-            <button type="submit">Submit</button>
-            <p class="backlink">New Register <a href="register.html">Register</a></p>
+                </td>
+              </tr>
+            </table>
+
+            <div class="buttons">
+            <button type="submit" id="submit">Submit</button>
+            <br>
+            <br>
+            <span class="backlink">New Register : <a href="register.html">Register</a></span>
+        </div>
         </form>
-
 
 
 </body>

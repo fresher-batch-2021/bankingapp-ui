@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>View-Application</title>
+    <link rel="stylesheet" href="css/table.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -17,9 +19,10 @@
 <body>
     <header id="head"></header>
     <main>
+        <h3 class="titles">List All User Transaction Details</h3>
         <div class="searchBar">
-            <table border="1" aria-describedby="mydesc" id="myTable">
-                <thead>
+            <table id="myTables" class="table-content" aria-describedby="mydesc">
+                <thead class="table-head">
                     <tr>
                         <th id="searchBar">Date</th>
                         <th id="searchBar">Application-ID</th>
@@ -30,13 +33,19 @@
                         <th id="searchBar">Amount</th>
                         <th id="searchBar">Credit</th>
                         <th id="searchBar">Debit</th>
-                       
+
                     </tr>
                 </thead>
                 <tbody id="transactionDetails"></tbody>
             </table>
         </div>
     </main>
-</body>
 
+    <script src="js/jquery.min.js"></script>
+
+    <script>
+        $("#head").load("adminhead.html");
+    </script>
+
+</body>
 </html>

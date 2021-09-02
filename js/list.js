@@ -25,6 +25,7 @@ function displayTasks(tableData) {
             <td>${taskObj.doc.email}</td>
             <td>${taskObj.doc.status}</td>
             <td>${taskObj.doc.initialBalance}</td>
+       
 
             <td><button type='button' onclick="updateStatus('${taskObj.doc._id}','ACCEPTED')">Accept
                 </button>&nbsp;&nbsp;&nbsp;<button type='button' onclick="updateStatus('${taskObj.doc._id}','REJECTED')">Reject</button></td>

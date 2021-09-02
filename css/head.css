@@ -1,54 +1,78 @@
-.banking{
-  text-align: left;
-  background-color: #C0C0C0;    
-  padding: 5px;
-  color: black;
-  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.heading{
-  
-  color:black;
-  font-size: 40px;
-  text-decoration: none;
-}
-.nav-item{
-  display: inline;
-  float: right;
-  
-  
-}
-.nav-item .nav-link{
-  color: black;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 10px;
-  
-  
-}
-li{
- padding-top: 10px;
-}
-a.sub_heading{
-  padding-right: 500px;
-  font-size: 18px;
-  display: inline;
-  text-decoration: none;
-  color: white;
-}
-a.account{
-  padding-right: 40px;
-  font-size: 18px;
-  display: inline;
-  text-decoration: none;
-  color: white;   
-}
-.menu{
-  text-decoration: none;
-  color:black;
-  padding: 2px;
-  margin-left: 70px;
-  width: 5px;
 
+/* html {
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+} */
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+#head{
+  border-bottom: 1px solid #E2E8F0;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+/* 
+.hamburger {
+  display: none;
+} */
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* font-size: 2px; */
+
+
+}
+
+.nav-item {
+  margin-left: 5rem;
   
-  
+}
+
+.nav-link{
+  font-size: 15px;
+  font-weight: 400;
+  color: #475569;
+  padding:2px;
+}
+
+.nav-link:hover{
+  color: #482ff7;
+}
+
+.nav-logo {
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: grey;
 }

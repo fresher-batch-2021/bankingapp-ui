@@ -1,68 +1,43 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
-      background-color: rgb(24, 45, 54);
-      color:white;
-    font-family: 'Muli', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-  }
-  .container{
-      background-color: rgb(41, 148, 180);
-      padding: 20px 40px;
-      border-radius: 5px;
-  }
-  .container h1{
-      text-align:center;
-      margin-bottom: 30px;
-  }
-.container a{
-text-decoration: none;
-color: lightskyblue;
+*{
+    margin:0;
+    padding:0;
 }
-.btn{
-    cursor: pointer;
-    display:inline-block;
-    width:30%;
-    background: lightblue;
-    padding: 15px;
-    font-family: inherit;
-    font-size: 16px;
-    border: 0;
+
+.loginbox{
+    margin-top: 120px;
+    border: 3px solid #ccc;
+    margin-right:35% ;
+    margin-left: 30%;
+    padding:10px;
+    background-color: #f2f2f2;
     border-radius: 5px;
-    outline: 0;
 }
-
-
-.btn:active{
-    transform: scale(0.98);
+td
+{
+    padding:10px;
+    /* border-radius: 5px; */
 }
-.text{
-    margin-top: 30px;
+th{
+    padding:15px;
 }
-.form-control{
-    position: relative;
-    margin: 20px 0 40px;
-    width: 300px;
+input{
+    padding:5px;
+    border-radius: 5px;
+    /* border:none; */
 }
-.form-control input{
-    background-color: transparent;
-    border: 0;
-    border-bottom: 2px #fff solid;
-    display: block;
-    width:100%;
-    padding: 15px 0;
-    font-size: 18px;
-    color: #fff;
+label{
+    color:black;
 }
-.form-control input:focus,.form-control input:valid{
-    outline: 0;
-
+h1
+{
+    text-align: center;
+    padding:10px;
+}
+#reset{
+    margin-left: 38%;
+}
+#buttons{
+    margin-top:5px;
+    padding:10px;
+    border-radius: 10px;
 }
