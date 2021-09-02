@@ -25,6 +25,7 @@ function displayTasks(formValues) {
                 </td><td>${taskObj.email}</td>
                 <td>${taskObj.status}</td>
                 <td>${taskObj.initialBalance}</td>
+                
                 <td><button type='button' onclick="depositAmount('${taskObj._id}','${taskObj.initialBalance}','CREDIT')">Deposit
                 </button></td>
                 <td><button type='button' onclick="withdrawAmount('${taskObj._id}','${taskObj.initialBalance}','DEBIT')">Withdraw
@@ -124,6 +125,7 @@ function history(applicationObj, action, amount) {
         });
     }
     if (action == "DEBIT") {
+        alert("Else Works");
         console.log("amount :", amount);
         applicationObj.amount = amount;
         credit1="-";

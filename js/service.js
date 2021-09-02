@@ -1,12 +1,12 @@
 class userService {
-    static login(email, password) {
+    static login(email, password1,role) {
         const selectedData = {
             selector:
             {
                 email: email,
-                password: password
+                password: password1
             },
-            fields: ["id", "email", "mobilenumber"]
+            fields: ["id", "email","role","mobilenumber"]
 
         };
 

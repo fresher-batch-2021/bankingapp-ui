@@ -27,8 +27,6 @@ function login() {
 
       try{
         Validator.isValidString(email,"Email Cannot be Blank");
-       
-        Password.isValidPassword(password,"Password must contain atleast 8 Charcter");
   
         Validator.isValidString(password1, "Password is Mandatory");
 
@@ -56,7 +54,7 @@ function login() {
             else if (role == "user") {
               alert("login succesful");
               // setTimeout(function () {
-                  window.location.href = "list_train.html"
+                  window.location.href = "index.html"
               // }, 3000);
 
           }
