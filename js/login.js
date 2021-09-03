@@ -2,36 +2,20 @@ function login() {
   event.preventDefault();
 
   const email = document.querySelector("#email").value;
-  const password1 = document.querySelector("#password").value;
-  const roles = document.querySelectorAll("#role");
+  const password = document.querySelector("#password").value;
+  
 
+  try{
+      Validator.isValidString(email,"Email Cannot be Blank");
+      Password.isValidPassword(password,"Password must contain atleast 8 Charcter");
 
-  let role;
-
-    roles.forEach(roleRadio => {
-        if (roleRadio.checked) {
-            role = roleRadio.value;
-        }
-    });
-    console.log(role);
-
-    console.log(email + ":" + password1 + ":" + role);
-
-        let userObj={
+      let userObj={
           "email":email,
-          "password":password1,
-          "role": role
+          "password":password,
     
       };
       console.log(userObj);
-
-      try{
-        Validator.isValidString(email,"Email Cannot be Blank");
-  
-        Validator.isValidString(password1, "Password is Mandatory");
-
-
-      userService.login(email,password1,role).then(res=>{
+      userService.login(email,password).then(res=>{
           let data=res.data.docs;
           console.log(data);
 
@@ -40,42 +24,25 @@ function login() {
         }
         else {
             const user = data[0];
-            localStorage.setItem("Logged_in_users", JSON.stringify(user));
-            console.log("Role:", role);
-
-            if (role == "admin") {
-              alert("Login succesful");
-              console.log("alert completed");
-              // setTimeout(function () {
-                  window.location.href = "adminhead.html"
-              // }, 3000);
-            }
-
-            else if (role == "user") {
-              alert("login succesful");
-              // setTimeout(function () {
-                  window.location.href = "index.html"
-              // }, 3000);
-
-          }
-      }
+            alert("Login Successful");
+             localStorage.setItem('userName', JSON.stringify(user));
+            window.location.href = "index.html";
+        }
 
 
-    }).catch(err=>{
-      console.error(err.message);
-      alert("Unable to Login");
-    });
+
+      })
+
+
+    }catch(err)
+    {
+        console.error(err.message);
+        alert("Unable to Login");
+        alert(err.message);
+
     }
 
-        catch(err)
-        {
-          console.error(err.message);
-          toastr.error("Error: " + err.message);
-          
-      }
-    
-        
-}    
-    
+
+  }
 
   

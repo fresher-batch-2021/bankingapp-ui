@@ -15,7 +15,7 @@ function register() {
 
     try {
         let registerObj = {
-            reguserName:userName,
+            reguserName: userName,
             regmobilenumber: mobilenumber,
             regemail: email
         };
@@ -26,6 +26,7 @@ function register() {
             email: email,
             mobilenumber: mobilenumber,
             password: userPassword,
+            role: "USER"
         };
 
         //Validate Form Fields...
@@ -36,7 +37,7 @@ function register() {
         Validator.isValidString(userName, "UserName Cannot be Blank");
         Password.isValidPassword(userPassword, "Password must contain atleast 8 Characters");
         Password.isValidPassword(confirmPassword, "Password must contain atleast 8 Characters");
-    
+
         userService.register(formData).then(res => {
             let data = res.data;
             console.log(data);
@@ -47,7 +48,7 @@ function register() {
             alert(err.message);
             alert("Unable to register");
         });
-    } 
+    }
     catch (err) {
         console.log(err.response);
         alert(err.response);
@@ -56,7 +57,7 @@ function register() {
 }
 
 function setDate() {
-     let previousDay = dayjs().subtract(11, 'year').toDate();
+    let previousDay = dayjs().subtract(11, 'year').toDate();
 
     let today = previousDay.toJSON().substr(0, 10);
     document.querySelector("#dob").setAttribute("max", today);
