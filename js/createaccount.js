@@ -1,6 +1,6 @@
 function account() {
     event.preventDefault();
-   
+
     const firstName = document.querySelector("#firstName").value;
     const lastName = document.querySelector("#lastName").value;
     const fatherName = document.querySelector("#fatherName").value;
@@ -15,51 +15,21 @@ function account() {
     const religion = document.querySelector("#religion").value;
     const community = document.querySelector("#community").value;
     const aadhar = document.querySelector("#aadhar").value;
+    try {
+        Validator.isValidString(firstName, "FirstName cannot be blank");
+        Validator.isValidString(lastName, "LastName cannot be blank");
+        Validator.isValidString(fatherName, "Fathername cannot be blank")
+        Validator.isValidString(dob, "DateOfBirth cannot be blank");
+        Validator.isValidContact(mobilenumber, "MobileNumber must contain 10 digit");
+        Validator.isValidMobileNumber(mobilenumber,"Mobilenumber cannot be blank ");
+        Validator.isValidString(gender, "Gender cannot be blank");
+        Validator.isValidString(state, "State cannot be blank");
+        Validator.isValidString(currentAddress, "Current Address cannot be blank");
+        Validator.isValidString(permanentAddress, "Permanent Address cannot be blank");
+        Validator.isValidString(branch, "Branch cannot be blank");
+        Validator.isValidString(religion, "Religion cannot be blank");
+        Validator.isValidNumber(aadhar, "Aadhar number must contain 12 digit");
 
-    if (firstName == "" || firstName.trim() == "") {
-        alert("FirstName cannot be blank");
-        return false;
-    } else if (lastName == "" || lastName.trim() == "") {
-        alert("LastName cannot be blank");
-        return false;
-    } else if (fatherName == "") {
-        alert("Fathername cannot be blank");
-        return false;
-    }
-    else if (email == "") {
-        alert("Email-Id Cannot be blank");
-        return false;
-    }
-    else if (dob == "") {
-        alert("DateOfBirth cannot be blank");
-        return false;
-    }
-    else if (mobilenumber == "") {
-        alert("Mobilenumber cannot be blank");
-        return false;
-    }
-    else if (gender == "") {
-        alert("Gender cannot be blank");
-        return false;
-    } else if (state == "") {
-        alert("State cannot be blank");
-    } else if (currentAddress == "") {
-        alert("Current Address cannot be blank");
-        return false;
-    } else if (permanentAddress == "") {
-        alert("Permanent Address cannot be blank");
-        return false;
-    } else if (branch == "") {
-        alert("Branch cannot be blank");
-        return false;
-    } else if (religion == "") {
-        alert("Religion cannot be blank");
-        return false;
-    } else if (aadhar.length != 12) {
-        alert("Aadhar number contain 12digit");
-        return false;
-    } else {
-        alert("Registration Successful");
         const userObj = {
             "firstName": firstName,
             "lastName": lastName,
@@ -79,9 +49,12 @@ function account() {
         console.log(userObj);
         localStorage.setItem('userData', JSON.stringify(userObj));
         window.location.href = "profile.html";
-    }
+    } catch (err) {
+        console.error(err.message);
+        alert(err.message);
+        alert("Failed");
+    };
 }
-
 function address() {
     const permanentaddress1 = document.getElementById("currentAddress").value;
     document.getElementById("permanentAddress").innerHTML = permanentaddress1;
