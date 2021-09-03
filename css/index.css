@@ -40,11 +40,11 @@
     width: 170px;
     margin: 20px auto 5px;
 }
-#services{
+/* #services{
     text-align: center;
     color: #efefef!important;
     padding-bottom: 10px;
-}
+} */
 .services{
     margin-top: 40px;
 }
@@ -187,17 +187,14 @@ h1::after{
     padding: 10px 5px;
     text-align: center;
     width: 100%;
-
-
-}
-.price-head{
     color: #fff;
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 5px;
-    padding: 5px;
     text-transform: uppercase;
+
 }
+
 .price-head p{
     font-size: 25px;
     color: #ccc;

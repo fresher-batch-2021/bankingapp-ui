@@ -56,7 +56,7 @@ function depositAmount(id, balance, credit) {
             console.log("Update row", result.data);
             alert("Amount credited Successfully");
             history(applicationObj, credit, deposit);
-            // window.location.reload();
+           
 
         });
 
@@ -96,7 +96,7 @@ function history(applicationObj, action, amount) {
     if (action == "CREDIT") {
         console.log("amount :", amount);
         applicationObj.amount = amount;
-        debit1 = "-";
+        let debit1 = "-";
         applicationObj.debit = debit1;
         alert("If works");
         let historyObj = {
@@ -126,7 +126,7 @@ function history(applicationObj, action, amount) {
     if (action == "DEBIT") {
         console.log("amount :", amount);
         applicationObj.amount = amount;
-        credit1 = "-";
+        let credit1 = "-";
         applicationObj.credit = credit1;
         let historyObj = {
             name: applicationObj.name,
