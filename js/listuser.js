@@ -66,8 +66,8 @@ function depositAmount(id, balance, credit) {
 }
 function withdraw(id, balance, debit) {
     event.preventDefault();
-    const withdraw = document.querySelector("#withdraw").value;
-    const withdrawAmount = `${withdraw}`
+    const debitAmount = document.querySelector("#withdraw").value;
+    const withdrawAmount = `${debitAmount}`
     const url = "https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/newaccountregister/" + id;
     console.log('Update ' + id + ',Deposit=' + balance);
 
@@ -80,8 +80,8 @@ function withdraw(id, balance, debit) {
         axios.put(updateURL, applicationObj, { headers: { 'Authorization': basicAuth } }).then(result => {
             console.log("Update row", result.data);
             alert("Amount Withdrawed Successfully");
-            console.log(applicationObj, debit, withdraw);
-            history(applicationObj, debit, withdraw);
+            console.log(applicationObj, debit, debitAmount);
+            history(applicationObj, debit, debitAmount);
         });
 
 
