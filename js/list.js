@@ -1,5 +1,5 @@
 let tableValues = [];
-userService.listService().then(res => {
+UserService.listService().then(res => {
     let data = res.data;
     console.log("response : ", data);
     tableValues = data.rows;
@@ -54,8 +54,8 @@ function updateStatus(id, status) {
 
     //get by id
    
-    axios.get(url, { headers: { 'Authorization': basicAuth } }).then(result => {
-        const applicationObj = result.data;
+    axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
+        const applicationObj = res.data;
 
         applicationObj.status = status;
 

@@ -1,7 +1,7 @@
 let userData = JSON.parse(localStorage.getItem('userName'));
 let emailId = userData.email;
 let tableData = [];
-userService.transactionHistory(emailId).then(res => {
+UserService.transactionHistory(emailId).then(res => {
     let data = res.data;
     console.log("response : ", data);
     tableData = data.docs;
@@ -11,10 +11,10 @@ userService.transactionHistory(emailId).then(res => {
     alert("List Failed");
 });
 
-function displayList(tableData) {
-    console.log("history :",tableData)
+function displayList(tableValue) {
+    console.log("history :", tableValue)
     let content = "";
-    for (let history of tableData) {
+    for (let history of tableValue) {
         content =
             content + `
                 <tr>

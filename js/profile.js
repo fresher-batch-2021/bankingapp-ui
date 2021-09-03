@@ -83,7 +83,7 @@ try {
         appiledDate: date
     }
     console.log("Data", applicationData);
-    userService.addService(applicationData).then(res => {
+    UserService.addService(applicationData).then(res => {
         let data = res.data;
         console.log(data);
         alert("Please Logout Before Leaving");

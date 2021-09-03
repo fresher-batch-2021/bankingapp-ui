@@ -1,4 +1,4 @@
-class userService {
+class UserService {
     static login(email, password) {
         const selectedData = {
             selector:

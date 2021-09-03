@@ -38,7 +38,7 @@ function register() {
         Password.isValidPassword(userPassword, "Password must contain atleast 8 Characters");
         Password.isValidPassword(confirmPassword, "Password must contain atleast 8 Characters");
 
-        userService.register(formData).then(res => {
+        UserService.register(formData).then(res => {
             let data = res.data;
             console.log(data);
             alert("Successffully Register");

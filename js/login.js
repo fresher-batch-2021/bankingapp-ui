@@ -15,7 +15,7 @@ function login() {
     
       };
       console.log(userObj);
-      userService.login(email,password).then(res=>{
+      UserService.login(email,password).then(res=>{
           let data=res.data.docs;
           console.log(data);
 

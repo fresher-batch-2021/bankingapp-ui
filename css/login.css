@@ -2,12 +2,13 @@ body
 {  
     margin: 0;  
     padding: 0;  
-    
+    /* background-color:#6abadeba;   */
+    font-family: 'Arial';  
 }  
 .loginbox{  
     height: auto;
         width: 310px;  
-       
+        /* overflow: hidden;   */
         margin: auto;  
         margin-top: 90px;
         padding: 50px;  
@@ -18,7 +19,7 @@ body
 h1{  
     text-align: center;  
     color: #277582;  
-    
+    /* padding: 20px;   */
 }  
 label{  
     color: black;  
@@ -45,6 +46,7 @@ label{
     width: 300px;  
     height: 30px;  
     border: none; 
+    width: 310px;
     border-radius: 17px;  
     padding-left: 9px;  
     color: blue;  
@@ -61,7 +63,7 @@ a{
     width: 300px;  
     height: 30px;  
     border: none; 
-   
+    width: 310px;
     border-radius: 17px;  
     padding-left: 9px;  
     color: blue;   

@@ -4,7 +4,7 @@ let userData = JSON.parse(localStorage.getItem('userName'));
 console.log("userdata :", userData);
 let emailId = userData.email;
 console.log(emailId);
-userService.listuser(emailId).then(res => {
+UserService.listuser(emailId).then(res => {
     let data = res.data;
     console.log("response : ", data);
     tableData = data.docs;
@@ -27,7 +27,7 @@ function displayTasks(formValues) {
                 <td>${taskObj.initialBalance}</td>
                 <td><button type='button' onclick="depositAmount('${taskObj._id}','${taskObj.initialBalance}','CREDIT')">Deposit
                 </button></td>
-                <td><button type='button' onclick="withdrawAmount('${taskObj._id}','${taskObj.initialBalance}','DEBIT')">Withdraw
+                <td><button type='button' onclick="withdraw('${taskObj._id}','${taskObj.initialBalance}','DEBIT')">Withdraw
                 </button></td>
                 
                 </tr>`;
@@ -46,8 +46,8 @@ function depositAmount(id, balance, credit) {
     const url = "https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/newaccountregister/" + id;
     console.log('Update ' + id + ',Deposit=' + balance);
 
-    axios.get(url, { headers: { 'Authorization': basicAuth } }).then(result => {
-        const applicationObj = result.data;
+    axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
+        const applicationObj = res.data;
         applicationObj.credit = credit;
         applicationObj.initialBalance = parseInt(applicationObj.initialBalance) + parseInt(amount);
         const updateURL = url + "?rev=" + applicationObj._rev;
@@ -56,7 +56,7 @@ function depositAmount(id, balance, credit) {
             console.log("Update row", result.data);
             alert("Amount credited Successfully");
             history(applicationObj, credit, deposit);
-           
+            // window.location.reload();
 
         });
 
@@ -64,15 +64,15 @@ function depositAmount(id, balance, credit) {
         alert("Failed");
     });
 }
-function withdrawAmount(id, balance, debit) {
+function withdraw(id, balance, debit) {
     event.preventDefault();
     const withdraw = document.querySelector("#withdraw").value;
     const withdrawAmount = `${withdraw}`
     const url = "https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/newaccountregister/" + id;
     console.log('Update ' + id + ',Deposit=' + balance);
 
-    axios.get(url, { headers: { 'Authorization': basicAuth } }).then(result => {
-        const applicationObj = result.data;
+    axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
+        const applicationObj = res.data;
         applicationObj.debit = debit;
         applicationObj.initialBalance = parseInt(applicationObj.initialBalance) - parseInt(withdrawAmount);
         const updateURL = url + "?rev=" + applicationObj._rev;
@@ -96,15 +96,15 @@ function history(applicationObj, action, amount) {
     if (action == "CREDIT") {
         console.log("amount :", amount);
         applicationObj.amount = amount;
-         let debit1="-";
-        applicationObj.debit=debit1;
+        debit1 = "-";
+        applicationObj.debit = debit1;
         alert("If works");
         let historyObj = {
 
             name: applicationObj.name,
             branch: applicationObj.branch,
             credit: applicationObj.credit,
-            debit:applicationObj.debit,
+            debit: applicationObj.debit,
             date: applicationObj.date,
             email: applicationObj.email,
             mobilenumber: applicationObj.mobilenumber,
@@ -126,12 +126,12 @@ function history(applicationObj, action, amount) {
     if (action == "DEBIT") {
         console.log("amount :", amount);
         applicationObj.amount = amount;
-         let credit1="-";
-        applicationObj.credit=credit1;
+        credit1 = "-";
+        applicationObj.credit = credit1;
         let historyObj = {
             name: applicationObj.name,
             branch: applicationObj.branch,
-            credit:applicationObj.credit,
+            credit: applicationObj.credit,
             debit: applicationObj.debit,
             date: applicationObj.date,
             email: applicationObj.email,

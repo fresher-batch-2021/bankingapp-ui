@@ -1,5 +1,5 @@
 let tableData = [];
-userService.transactionHistoryList().then(res => {
+UserService.transactionHistoryList().then(res => {
     let data = res.data;
     console.log("response : ", data);
     tableData = data.rows;
@@ -9,10 +9,10 @@ userService.transactionHistoryList().then(res => {
     alert("List Failed");
 });
 
-function displayList(tableData) {
-    console.log("history :", tableData)
+function displayList(tableValue) {
+    console.log("history :", tableValue)
     let content = "";
-    for (let history of tableData) {
+    for (let history of tableValue) {
         content =
             content + `
                 <tr>
