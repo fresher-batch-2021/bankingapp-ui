@@ -21,7 +21,7 @@ function account() {
         Validator.isValidString(fatherName, "Fathername cannot be blank")
         Validator.isValidString(dob, "DateOfBirth cannot be blank");
         Validator.isValidContact(mobilenumber, "MobileNumber must contain 10 digit");
-        Validator.isValidMobileNumber(mobilenumber,"Mobilenumber cannot be blank ");
+        
         Validator.isValidString(gender, "Gender cannot be blank");
         Validator.isValidString(state, "State cannot be blank");
         Validator.isValidString(currentAddress, "Current Address cannot be blank");
@@ -48,11 +48,15 @@ function account() {
         };
         console.log(userObj);
         localStorage.setItem('userData', JSON.stringify(userObj));
-        window.location.href = "profile.html";
+        toastr.success("Successfully Created");
+        setTimeout(function(){
+            window.location.href = "profile.html";  
+        }, 2000);
+       
     } catch (err) {
         console.error(err.message);
-        alert(err.message);
-        alert("Failed");
+        toastr.error(err.message);
+        toastr.error("Account Creation has been Failed");
     };
 }
 function address() {

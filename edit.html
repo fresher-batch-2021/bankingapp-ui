@@ -7,6 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit-Account Application</title>
     <link rel="stylesheet" href="css/account.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+
+
 </head>
 
 <body>
@@ -125,7 +136,7 @@
             </form>
         </div>
     </main>
-    
+
     <script>
 
         let userData = JSON.parse(localStorage.getItem('userData'));
@@ -188,11 +199,13 @@
 
             }
             console.log(customerObj);
-            alert("Updated");
-
+            toastr.success("Updated");
+            setTimeout(function () {
+                window.location.href = "profile.html";
+            }, 2000);
             localStorage.setItem('editform', JSON.stringify(customerObj));
 
-            window.location.href = "profile.html";
+
 
         }
     </script>

@@ -7,10 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/register.css">
-    <script src="js/login.js"></script>
-    <script src="js/validator.js"></script>
-    <script src="js/password.js"></script>
-    <script src="js/service.js"></script>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -18,11 +23,12 @@
 
 <body>
 
+
     <div class="loginbox">
 
         <h1>Login Here</h1>
         <form method="post" target="blank" onsubmit="login()">
-            <table aria-describedby="mydesc">
+            <table cellpadding="10" aria-describedby="mydesc">
                 <tr>
                     <th scope="col">
                         <label for="email">Email*</label><br>
@@ -53,6 +59,10 @@
         </form>
 
 
+        <script src="js/login.js"></script>
+        <script src="js/validator.js"></script>
+        <script src="js/password.js"></script>
+        <script src="js/service.js"></script>
 
 </body>
 

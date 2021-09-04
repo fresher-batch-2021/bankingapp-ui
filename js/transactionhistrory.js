@@ -8,7 +8,7 @@ UserService.transactionHistory(emailId).then(res => {
     console.log("table list :", tableData);
     displayList(tableData);
 }).catch(err => {
-    alert("List Failed");
+    toastr.error("List Failed");
 });
 
 function displayList(tableValue) {

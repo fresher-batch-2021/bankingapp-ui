@@ -5,7 +5,7 @@ function checkLogin() {
     console.log(userStr);
     let user = userStr != null ? JSON.parse(userStr) : null;
     if (user != null) {
-        document.querySelector("#loggedIn").innerHTML = "Hi!" + user.email;
+        document.querySelector("#loggedIn").innerHTML = "Hello" + user.email;
     }
 }
 checkLogin();

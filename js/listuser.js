@@ -11,7 +11,7 @@ UserService.listuser(emailId).then(res => {
     console.log("table list :", tableData);
     displayTasks(tableData);
 }).catch(err => {
-    alert("List Failed");
+    toastr.error("List Failed");
 });
 
 function displayTasks(formValues) {
@@ -42,31 +42,42 @@ const basicAuth = "Basic " + btoa(dbusername + ":" + dbpassword);
 
 function depositAmount(id, balance, credit) {
     const deposit = document.querySelector("#deposit").value;
-    const amount = `${deposit}`
-    const url = "https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/newaccountregister/" + id;
-    console.log('Update ' + id + ',Deposit=' + balance);
+    if (deposit == null || deposit == undefined) {
+        toastr.error("Please Enter the Amount");
+    }
+    else {
 
-    axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
-        const applicationObj = res.data;
-        applicationObj.credit = credit;
-        applicationObj.initialBalance = parseInt(applicationObj.initialBalance) + parseInt(amount);
-        const updateURL = url + "?rev=" + applicationObj._rev;
-        console.log(updateURL);
-        axios.put(updateURL, applicationObj, { headers: { 'Authorization': basicAuth } }).then(result => {
-            console.log("Update row", result.data);
-            alert("Amount credited Successfully");
-            history(applicationObj, credit, deposit);
-           
+        const amount = `${deposit}`
+        const url = "https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/newaccountregister/" + id;
+        console.log('Update ' + id + ',Deposit=' + balance);
 
+        axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
+            const applicationObj = res.data;
+            applicationObj.credit = credit;
+            applicationObj.initialBalance = parseInt(applicationObj.initialBalance) + parseInt(amount);
+            const updateURL = url + "?rev=" + applicationObj._rev;
+            console.log(updateURL);
+            axios.put(updateURL, applicationObj, { headers: { 'Authorization': basicAuth } }).then(result => {
+                console.log("Update row", result.data);
+                toastr.success("Amount credited Successfully");
+                setTimeout(function () {
+                    // window.location.reload();
+                }, 10000);
+                history(applicationObj, credit, deposit);
+
+            });
+
+        }).catch(err => {
+            toastr.error("Please try Again");
         });
-
-    }).catch(err => {
-        alert("Failed");
-    });
+    }
 }
+
 function withdraw(id, balance, debit) {
     event.preventDefault();
     const debitAmount = document.querySelector("#withdraw").value;
+    const price= `${"+ "+debitAmount}`;
+    console.log(price);
     const withdrawAmount = `${debitAmount}`
     const url = "https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/newaccountregister/" + id;
     console.log('Update ' + id + ',Deposit=' + balance);
@@ -79,14 +90,17 @@ function withdraw(id, balance, debit) {
         console.log(updateURL);
         axios.put(updateURL, applicationObj, { headers: { 'Authorization': basicAuth } }).then(result => {
             console.log("Update row", result.data);
-            alert("Amount Withdrawed Successfully");
+            toastr.success("Amount Withdrawed Successfully");
+            setTimeout(function () {
+                // window.location.reload();
+            }, 3000);
             console.log(applicationObj, debit, debitAmount);
             history(applicationObj, debit, debitAmount);
         });
 
 
     }).catch(err => {
-        alert("Failed");
+        toastr.error("Please try Again");
     });
 }
 function history(applicationObj, action, amount) {
@@ -98,7 +112,7 @@ function history(applicationObj, action, amount) {
         applicationObj.amount = amount;
         let debit1 = "-";
         applicationObj.debit = debit1;
-        alert("If works");
+
         let historyObj = {
 
             name: applicationObj.name,
@@ -112,15 +126,18 @@ function history(applicationObj, action, amount) {
             initialBalance: applicationObj.initialBalance
         }
         console.log("history", historyObj);
-        alert("work");
+
         let historyurl = "https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/transactionhistory";
         axios.post(historyurl, historyObj, { headers: { 'Authorization': basicAuth } }).then(result => {
             let data = result.data;
             console.log(data);
-            alert("Credited");
-            window.location.reload();
+            // toastr.success("Credited");
+            // setTimeout(function()  {
+            //     window.location.reload();  
+            // }, 3000);
+
         }).catch(err => {
-            alert("Failed");
+            toastr.error("Failed");
         });
     }
     if (action == "DEBIT") {
@@ -140,15 +157,18 @@ function history(applicationObj, action, amount) {
             initialBalance: applicationObj.initialBalance
         }
         console.log("history", historyObj);
-        alert("work");
+
         let historyurl = "https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/transactionhistory";
         axios.post(historyurl, historyObj, { headers: { 'Authorization': basicAuth } }).then(result => {
             let data = result.data;
             console.log(data);
-            alert("Debited");
-            window.location.reload();
+            // toastr.success("Debited");
+            // setTimeout(function() {
+            //     window.location.reload();  
+            // }, 3000);
+
         }).catch(err => {
-            alert("Failed");
+            toastr.error("Please try Again");
         });
     }
 

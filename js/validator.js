@@ -11,13 +11,7 @@ class Validator {
       throw new Error(message);
     }
   }
-  // static isValidMobileNumber(mobilenumber,message)
-  // {
-  //   if(mobilenumber==''|| mobilenumber==null)
-  //   {
-  //     throw new Error(message);
-  //   }
-  // }
+  
 
     static isValidNumber(aadhar, message) {
       if (aadhar.length != 12) {

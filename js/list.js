@@ -8,8 +8,8 @@ UserService.listService().then(res => {
 }).catch(err => {
     let errorMessage = err;
     console.error(errorMessage);
-    console.log("failed");
-    alert("Error-" + errorMessage);
+    // console.log("failed");
+    toastr.error("Error-" + errorMessage);
 });
 
 function displayTasks(tableData) {
@@ -64,22 +64,25 @@ function updateStatus(id, status) {
         console.log(updateURL);
         axios.put(updateURL, applicationObj, { headers: { 'Authorization': basicAuth } }).then(result => {
             console.log("Update row", result.data);
-            alert("Updated");
-            window.location.reload();
+            toastr.success(" Status Updated");
+            setTimeout(function() {
+                window.location.reload();
+            }, );
+            
 
         });
 
     }).catch(err => {
         let errorMessage = err.response.data;
         console.error(errorMessage);
-        console.log("failed");
-        alert("Error-" + errorMessage);
+        // console.log("failed");
+        toastr.error("Error-" + errorMessage);
     });
 }
 
 
 function deleteFun(id, revId) {
-    alert("Function Works")
+   
     console.log('Delete' + id + " " + revId);
 
     const dbusername = "apikey-v2-zyhv5j7i61imeby1qya0ma2ejrc0fkf9n4e4bl3w5gn";
@@ -88,12 +91,12 @@ function deleteFun(id, revId) {
 
     const url="https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/newaccountregister/"+id+ "?rev=" + revId;
     axios.delete(url, { headers: { 'Authorization': basicAuth } }).then(res => {
-        console.log("success");
+        // console.log("success");
         window.location.reload();
     }).catch(err => {
         let errorMessage = err.response.data.errorMessage;
         console.error(errorMessage);
-        console.log("failed");
-        alert("Error-" + errorMessage);
+        // console.log("failed");
+        toastr.error("Error-" + errorMessage);
     });
 }

@@ -7,7 +7,7 @@ class UserService {
                 password: password,
             
             },
-            fields: ["id", "email","mobilenumber"]
+            fields: ["id", "email","mobilenumber","role"]
 
         };
 

@@ -12,21 +12,41 @@ function login() {
       let userObj={
           "email":email,
           "password":password,
-    
+            
       };
       console.log(userObj);
       UserService.login(email,password).then(res=>{
           let data=res.data.docs;
           console.log(data);
 
+
+        //   if (role == "admin") {
+        //     toastr.success("login succesful");
+        //     console.log("toastr completed");
+        //     setTimeout(function () {
+        //         window.location.href = "adminhead.html"
+        //     }, 3000);     
+        // }
+        // else if (role == "USER") {
+        //     toastr.success("login succesful");
+        //     setTimeout(function () {
+        //         window.location.href = "index.html"
+        //     }, 3000);
+
+        // }
+
           if (data.length == 0) {
-            alert("Invalid Login Credentials");
+            toastr.error("Invalid Login Credentials");
+            setTimeout(function () {}, 1000)
         }
         else {
             const user = data[0];
-            alert("Login Successful");
+            toastr.success("Login Successful");
+            setTimeout(function(){
+              window.location.href = "index.html";
+            }, 2000);
              localStorage.setItem('userName', JSON.stringify(user));
-            window.location.href = "index.html";
+           
         }
 
 
@@ -37,8 +57,8 @@ function login() {
     }catch(err)
     {
         console.error(err.message);
-        alert("Unable to Login");
-        alert(err.message);
+        toastr.error("Unable to Login");
+        toastr.error(err.message);
 
     }
 
