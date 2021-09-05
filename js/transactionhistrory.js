@@ -1,4 +1,4 @@
-let userData = JSON.parse(localStorage.getItem('userName'));
+let userData = JSON.parse(localStorage.getItem('userData'));
 let emailId = userData.email;
 let tableData = [];
 UserService.transactionHistory(emailId).then(res => {

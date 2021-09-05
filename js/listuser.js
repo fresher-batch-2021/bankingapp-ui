@@ -1,6 +1,6 @@
 
 let tableData = [];
-let userData = JSON.parse(localStorage.getItem('userName'));
+let userData = JSON.parse(localStorage.getItem('userData'));
 console.log("userdata :", userData);
 let emailId = userData.email;
 console.log(emailId);
@@ -76,8 +76,6 @@ function depositAmount(id, balance, credit) {
 function withdraw(id, balance, debit) {
     event.preventDefault();
     const debitAmount = document.querySelector("#withdraw").value;
-    const price= `${"+ "+debitAmount}`;
-    console.log(price);
     const withdrawAmount = `${debitAmount}`
     const url = "https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/newaccountregister/" + id;
     console.log('Update ' + id + ',Deposit=' + balance);
@@ -122,7 +120,7 @@ function history(applicationObj, action, amount) {
             date: applicationObj.date,
             email: applicationObj.email,
             mobilenumber: applicationObj.mobilenumber,
-            amount: applicationObj.amount,
+            amount:"+ "+ applicationObj.amount,
             initialBalance: applicationObj.initialBalance
         }
         console.log("history", historyObj);
@@ -153,7 +151,7 @@ function history(applicationObj, action, amount) {
             date: applicationObj.date,
             email: applicationObj.email,
             mobilenumber: applicationObj.mobilenumber,
-            amount: applicationObj.amount,
+            amount:"- "+applicationObj.amount,
             initialBalance: applicationObj.initialBalance
         }
         console.log("history", historyObj);
