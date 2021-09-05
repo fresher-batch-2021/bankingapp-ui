@@ -15,7 +15,7 @@ class UserService {
         const dbpassword = "ec6094ae0714dc7a5ffc50a86924bef3";
         const basicAuth = "Basic " + btoa(dbusername + ":" + dbpassword);
         const url = "https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/bankingapp_user/_find";
-        return (axios.post(url, selectedData, { headers: { 'Authorization': basicAuth } }));
+        return axios.post(url, selectedData, { headers: { 'Authorization': basicAuth } });
     }
 
 

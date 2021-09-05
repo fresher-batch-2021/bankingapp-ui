@@ -44,8 +44,8 @@ label{
 #submit{ 
     margin-top: 20px; 
     width: 300px;  
-    height: 30px;  
-    border: none; 
+    height: 4s0px;  
+    /* border: none;  */
     width: 310px;
     border-radius: 17px;  
     padding-left: 9px;  
@@ -67,4 +67,4 @@ a{
     border-radius: 17px;  
     padding-left: 9px;  
     color: blue;   
-}  
+} 

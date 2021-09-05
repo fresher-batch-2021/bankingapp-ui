@@ -45,7 +45,7 @@ function register() {
                 UserService.register(formData).then(res => {
                     let data = res.data;
                     console.log(data);
-                    // alert("Successffully Register");
+                    
                     toastr.success("Successffully Register");
                     setTimeout(function() {
                         window.location.href = "login.html";  

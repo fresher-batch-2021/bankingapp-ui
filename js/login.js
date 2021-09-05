@@ -16,38 +16,43 @@ function login() {
       };
       console.log(userObj);
       UserService.login(email,password).then(res=>{
-          let data=res.data.docs;
+          let data=res.data.docs[0];
           console.log(data);
+          // alert(data.role);
 
+          if (data.role == "ADMIN") {
+            toastr.success("","login successful",{
+              // preventDuplicates=true
+            });
 
-        //   if (role == "admin") {
-        //     toastr.success("login succesful");
-        //     console.log("toastr completed");
-        //     setTimeout(function () {
-        //         window.location.href = "adminhead.html"
-        //     }, 3000);     
-        // }
-        // else if (role == "USER") {
-        //     toastr.success("login succesful");
-        //     setTimeout(function () {
-        //         window.location.href = "index.html"
-        //     }, 3000);
+            console.log("toastr completed");
+            setTimeout(function () {
+              localStorage.setItem("userData",JSON.stringify(data));
+                window.location.href = "adminhead.html"
+            }, 1000);     
+        }
+        else if (data.role == "USER") {
+            toastr.success("login Successful");
+            setTimeout(function () {
+              localStorage.setItem("userData",JSON.stringify(data));
+                window.location.href = "index.html"
+            }, 1000);
 
-        // }
+        }
 
           if (data.length == 0) {
             toastr.error("Invalid Login Credentials");
             setTimeout(function () {}, 1000)
         }
-        else {
-            const user = data[0];
-            toastr.success("Login Successful");
-            setTimeout(function(){
-              window.location.href = "index.html";
-            }, 2000);
-             localStorage.setItem('userName', JSON.stringify(user));
+        // else {
+        //     const user = data[0];
+        //     toastr.success("Login Successful");
+        //     setTimeout(function(){
+        //       window.location.href = "index.html";
+        //     }, 2000);
+        //      localStorage.setItem('userName', JSON.stringify(user));
            
-        }
+        // }
 
 
 

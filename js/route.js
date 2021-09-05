@@ -6,9 +6,9 @@ const routes = [
     { path: "profile.html", roles: ["USER"] },
     { path: "edit.html", roles: ["USER"] },
     { path: "listuser.html",roles:["USER"] },
-    {path:"listapplication.html",roles:["admin"]},
-    {path:"listTransaction.html",roles:["admin"]},
-
+    {path:"listapplication.html",roles:["ADMIN"]},
+    {path:"listTransaction.html",roles:["ADMIN"]},
+    {path:"adminhead.html",roles:["ADMIN"]}
 ];
 
  function logout() {
@@ -33,8 +33,9 @@ return allowed;
 }
 (function () {
     console.log("Routes initializing")
-    let user = JSON.parse(localStorage.getItem("IsLoggedIn"));
+    let user = JSON.parse(localStorage.getItem("userData"));
     console.log("LoggedIn User", user);
+    // alert(user.role);
     let role = user != null ? user.role : null;
     let pathName = window.location.pathname.substr(1);
     console.log(role,pathName)
