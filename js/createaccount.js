@@ -63,3 +63,13 @@ function address() {
     const permanentaddress1 = document.getElementById("currentAddress").value;
     document.getElementById("permanentAddress").innerHTML = permanentaddress1;
 }
+
+
+function setDate() {
+    let previousDay = dayjs().subtract(15, 'year').toDate();
+
+    let today = previousDay.toJSON().substr(0, 10);
+    document.querySelector("#dob").setAttribute("max", today);
+
+}
+setDate();
