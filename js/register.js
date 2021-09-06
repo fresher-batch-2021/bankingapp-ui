@@ -46,7 +46,7 @@ function register() {
                     let data = res.data;
                     console.log(data);
                     
-                    toastr.success("Successffully Register");
+                    toastr.success("Successfully Register");
                     setTimeout(function() {
                         window.location.href = "login.html";  
                     }, 1000);
