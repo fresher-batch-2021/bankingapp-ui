@@ -26,80 +26,33 @@
 
 
 <body>
-    <div class="loginbox">
+
+    <form class="registerForm" onsubmit="register()">
         <h1>Registration Form</h1>
-        <form onsubmit="register()">
-            <table aria-describedby="mydesc">
+        <label for="userName">UserName</label>
+        <input type="text" id="userName" placeholder="Username" required autocomplete="off">
+        <label for="mobilenumber">Mobile Number</label>
+        <input type="tel" id="mobilenumber" placeholder="Mobile number" pattern="[789][0-9]{9}" required
+            autocomplete="off">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="date" required>
+        <label for="email">Email-ID</label>
+        <input type="email" id="email" placeholder="Email-ID" required autocomplete="off">
+        <label for="userPassword">Password</label>
+        <input type="password" minlength="8" maxlength="15" id="userPassword" placeholder="Password">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" minlength="8" maxlength="15" id="confirmPassword" placeholder="Password" minlength="8"
+            required autocomplete="off">
+       
+        <button class="formButton" type="Submit" id="submit" value="Submit">Submit</button>
+        <button class="formButton" type="reset" id="reset" value="Reset">Reset</button>&nbsp;&nbsp;&nbsp;
 
-                <tr>
-                    <th scope="col">
-                        <label>UserName</label>
-                    </th>
-                    <td>
-                        <input type="text" id="userName" placeholder="Username" required autocomplete="off">
-                    </td>
-                    </td>
-                </tr>
-                <tr>
-
-                    <th scope="col">
-                        <label>Mobile Number</label>
-                    </th>
-
-                    <td>
-                        <input type="tel" id="mobilenumber" placeholder="Mobile number" pattern="[789][0-9]{9}" required
-                            autocomplete="off">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">
-                        Date of Birth
-                    </th>
-                    <td>
-                        <input type="date" id="dob" name="date" required>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">
-                        <label>Email-ID</label>
-                    </th>
-                    <td>
-                        <input type="email" id="email" placeholder="Email-ID" required autocomplete="off">
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="col">
-                        <label>Password</label>
-                    </th>
-                    <td>
-                        <input type="password" minlength="8" maxlength="15" id="userPassword" placeholder="Password"
-                            required autocomplete="off">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">
-                        <label>Confirm Password</label>
-                    </th>
-                    <td>
-                        <input type="password" minlength="8" maxlength="15" id="confirmPassword" placeholder="Password"
-                            minlength="8" required autocomplete="off">
-                    </td>
-                </tr>
-
-            </table>
-
-            <div class="buttons">
-                <button type="reset" id="reset" value="Reset">Reset</button>&nbsp;&nbsp;&nbsp;
-                <button type="Submit" id="submit" value="Submit">Submit</button>
-            </div>
-        </form>
-    </div>
+    </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.6/dayjs.min.js"
         integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="js/route.js"></script>
+    <!-- <script src="js/route.js"></script> -->
     <script src="js/register.js"></script>
     <script src="js/validator.js"></script>
     <script src="js/emailValidation.js"></script>

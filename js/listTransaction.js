@@ -21,7 +21,7 @@ function displayList(tableValue) {
                 <td>${history.doc.name}</td>
                 <td>${history.doc.branch}</td>
                 <td>${history.doc.mobilenumber}</td>
-                <td>${history.doc.initialBalance}</td>
+                <td>${"₹ "+history.doc.initialBalance}</td>
                 <td>${history.doc.amount}</td>
                 <td>${history.doc.credit}</td>
                 <td>${history.doc.debit}</td>

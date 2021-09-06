@@ -1,70 +1,47 @@
-body  
-{  
-    margin: 0;  
-    padding: 0;  
-    /* background-color:#6abadeba;   */
-    font-family: 'Arial';  
-}  
-.loginbox{  
-    height: auto;
-        width: 310px;  
-        /* overflow: hidden;   */
-        margin: auto;  
-        margin-top: 90px;
-        padding: 50px;  
-        background: #AAE2FA;  
-        border-radius: 12px ;  
-          
-}  
-h1{  
-    text-align: center;  
-    color: #277582;  
-    /* padding: 20px;   */
-}  
-label{  
-    color: black;  
-    font-size: 17px;  
-}  
-#email{  
+*{
+    margin: 0;
+    padding:0;
+}
+
+form {
+    background-color: #DCDCDC;
+    border: 1px solid #A9A9A9;
+    padding: 15px;
+    margin: 150px 500px 150px 500px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
     margin-bottom: 20px;
-    width: 300px;  
-    height: 30px;  
-    border: none;  
-    border-radius: 3px;  
-    padding-left: 8px;  
-}  
-#password{  
-    width: 300px;  
-    height: 30px;  
-    border: none;  
-    border-radius: 3px;  
-    padding-left: 8px;  
-      
-}  
-.buttons{ 
-    margin-top: 20px; 
-    width: 300px;  
-    height: 4s0px;  
-    /* border: none;  */
-    width: 310px;
-    border-radius: 17px;  
-    padding-left: 9px;  
-    color: blue;  
-  
-  
-}  
-span{ 
-    margin-top: 30px; 
-    color: black;  
-    font-size: 17px;  
-}  
-a{  
-    margin-top: 20px; 
-    width: 300px;  
-    height: 30px;  
-    border: none; 
-    width: 310px;
-    border-radius: 17px;  
-    padding-left: 9px;  
-    color: blue;   
-} 
+}
+
+.formButton {
+    width: 100%;
+    background-color: #84CBFF;
+    font-size: 15px;
+    color: white;
+    padding: 14px 20px;
+    margin-right: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 4px;
+}
+
+.formHead {
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+    margin-top: 150px;
+}
+h1{
+    text-align: center;
+}
+

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/login.css">
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
@@ -15,57 +15,37 @@
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-   
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
-
-
-    <div class="loginbox">
-
-        <h1>Login Here</h1>
-        <form method="post" target="blank" onsubmit="login()">
-            <table cellpadding="10" aria-describedby="mydesc">
-                <tr>
-                    <th scope="col">
-                        <label for="email">Email*</label><br>
-                    </th>
-                    <td>
-                        <input type="email" name="email" id="email" placeholder="Enter Email " required
-                            autocomplete="off" autofocus> <br />
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="col">
-                        <label for="password">Password*</label><br>
-                    </th>
-                    <td>
-                        <input type="password" name="password" id="password" placeholder="Enter Password " required
-                            autocomplete="off" autofocus> <br />
-                    </td>
-                </tr>
-
-            </table>
-
-            <div class="buttons">
-                <button type="submit" id="submit">Submit</button>
-                <br>
-                <br>
-                <span class="backlink">New Register : <a href="register.html">Register</a></span>
-            </div>
+    <main>
+        <form onsubmit="login()">
+            <h1>Login Here</h1>
+            <label for="email">Email*</label>
+            <input type="email" name="email" id="email" placeholder="Enter Email " required autocomplete="off"
+                autofocus> <br>
+            <label for="password">Password*</label>
+            <input type="password" name="password" id="password" placeholder="Enter Password " required
+                autocomplete="off" autofocus> <br>
+            <button class="formButton " type="submit" id="submit">Submit</button>
+            <br>
+            <br>
+            <span class="backlink">New Register : <a href="register.html">Register</a></span>
         </form>
 
 
-       
-        <script src="js/service.js"></script>
 
+
+        <script src="js/service.js"></script>
+        <script src="js/route.js"></script>
         <script src="js/login.js"></script>
         <script src="js/validator.js"></script>
         <script src="js/password.js"></script>
-       
+    </main>
 
 </body>
 

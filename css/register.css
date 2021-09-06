@@ -1,43 +1,47 @@
 *{
-    margin:0;
+    margin: 0;
     padding:0;
 }
 
-.loginbox{
-    margin-top: 120px;
-    border: 3px solid #ccc;
-    margin-right:35% ;
-    margin-left: 30%;
-    padding:10px;
-    background-color: #f2f2f2;
-    border-radius: 5px;
+form {
+    background-color: #DCDCDC;
+    border: 1px solid #A9A9A9;
+    padding: 15px;
+    margin: 20px 500px 100px 500px;
 }
-td
-{
-    padding:10px;
-    /* border-radius: 5px; */
+
+input,
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
 }
-th{
-    padding:15px;
+
+.formButton {
+    width: 100%;
+    background-color: #84CBFF;
+    font-size: 15px;
+    color: white;
+    padding: 14px 20px;
+    margin-right: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 4px;
 }
-input{
-    padding:5px;
-    border-radius: 5px;
-    /* border:none; */
-}
-label{
-    color:black;
-}
-h1
-{
+
+.formHead {
     text-align: center;
-    padding:10px;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+    margin-top: 150px;
 }
-#reset{
-    margin-left: 38%;
+h1{
+    text-align: center;
 }
-#buttons{
-    margin-top:5px;
-    padding:10px;
-    border-radius: 10px;
-}
+

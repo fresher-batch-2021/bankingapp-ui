@@ -7,18 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preview</title>
 
-    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/account.css">
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 
 </head>
 
@@ -26,8 +23,8 @@
     <header id="head"></header>
     <main>
         <div class="userDetails">
-            <form>
-                <h2>Application-Details</h2>
+            <form onsubmit="submitApplication()">
+                <h3>Account-Details</h3>
                 <table aria-describedby="mydesc" class="table">
                     <tr>
                         <th scope="col">
@@ -50,8 +47,6 @@
                         <td>
                             <label id="fatherName"></label>
                         </td>
-                    </tr>
-                    <tr>
                         <th scope="col">
                             <label>Date Of Birth</label>
                         </th>
@@ -59,6 +54,7 @@
                             <label id="dateOfBirth"></label>
                         </td>
                     </tr>
+
                     <tr>
                         <th scope="col">
                             <label>Mobile Number</label>
@@ -66,9 +62,6 @@
                         <td>
                             <label id="mobilenumber"></label>
                         </td>
-                    </tr>
-
-                    <tr>
                         <th scope="col">
                             <label>Gender</label>
                         </th>
@@ -76,6 +69,7 @@
                             <label id="gender"></label>
                         </td>
                     </tr>
+
                     <tr>
                         <th scope="col">
                             <label>Current-Address</label>
@@ -143,125 +137,126 @@
         </div>
         </form>
     </main>
-    
+
     <script>
 
 
 
         //Get values from Personal Information File
- let userData = JSON.parse(localStorage.getItem('userData'));
- console.log("value", userData);
- console.log(userData.email);
- document.querySelector("#firstName").innerHTML = userData.firstName;
- document.querySelector("#lastName").innerHTML = userData.lastName;
- document.querySelector("#fatherName").innerHTML = userData.fatherName;
- document.querySelector("#email").innerHTML = userData.email;
- document.querySelector("#dateOfBirth").innerHTML = userData.DOB;
- document.querySelector("#gender").innerHTML = userData.gender;
- document.querySelector("#mobilenumber").innerHTML = userData.mobilenumber;
- document.querySelector("#currentAddress").innerHTML = userData.currentAddress;
- document.querySelector("#permanentAddress").innerHTML = userData.permanentAddress;
- document.querySelector("#state").innerHTML = userData.state;
- document.querySelector("#branch").innerHTML = userData.branch;
- document.querySelector("#religion").innerHTML = userData.religion;
- document.querySelector("#community").innerHTML = userData.community;
- document.querySelector("#aadharNumber").innerHTML = userData.aadharNumber;
+        let userData = JSON.parse(localStorage.getItem('userData'));
+        console.log("value", userData);
+        console.log(userData.email);
+        document.querySelector("#firstName").innerHTML = userData.firstName;
+        document.querySelector("#lastName").innerHTML = userData.lastName;
+        document.querySelector("#fatherName").innerHTML = userData.fatherName;
+        document.querySelector("#email").innerHTML = userData.email;
+        document.querySelector("#dateOfBirth").innerHTML = userData.DOB;
+        document.querySelector("#gender").innerHTML = userData.gender;
+        document.querySelector("#mobilenumber").innerHTML = userData.mobilenumber;
+        document.querySelector("#currentAddress").innerHTML = userData.currentAddress;
+        document.querySelector("#permanentAddress").innerHTML = userData.permanentAddress;
+        document.querySelector("#state").innerHTML = userData.state;
+        document.querySelector("#branch").innerHTML = userData.branch;
+        document.querySelector("#religion").innerHTML = userData.religion;
+        document.querySelector("#community").innerHTML = userData.community;
+        document.querySelector("#aadharNumber").innerHTML = userData.aadharNumber;
 
 
- //Get Values from Edit option
- let formDetails = JSON.parse(localStorage.getItem('editform'));
+        //Get Values from Edit option
+        let formDetails = JSON.parse(localStorage.getItem('editform'));
 
- document.querySelector("#firstName").innerHTML = formDetails.firstName;
- document.querySelector("#lastName").innerHTML = formDetails.lastName;
- document.querySelector("#fatherName").innerHTML = formDetails.fatherName;
- document.querySelector("#email").innerHTML = formDetails.email;
- document.querySelector("#dateOfBirth").innerHTML = formDetails.DOB;
- document.querySelector("#mobilenumber").innerHTML = formDetails.mobilenumber;
- document.querySelector("#gender").innerHTML = formDetails.gender;
- document.querySelector("#currentAddress").innerHTML = formDetails.currentAddress;
- document.querySelector("#permanentAddress").innerHTML = formDetails.permanentAddress;
- document.querySelector("#state").innerHTML = formDetails.state;
- document.querySelector("#branch").innerHTML = formDetails.branch;
- document.querySelector("#religion").innerHTML = formDetails.religion;
- document.querySelector("#community").innerHTML = formDetails.community;
- document.querySelector("#aadharNumber").innerHTML = formDetails.aadharNumber;
-
-
-
-
- let formObj = {
-
-     "PersonalInformation": {
-         "firstName": formDetails.firstName,
-         "lastName": formDetails.lastName,
-         "fatherName": formDetails.fatherName,
-         "email": formDetails.email,
-         "dateOfBirth": formDetails.DOB,
-         "mobilenumber": formDetails.mobilenumber,
-         "gender": formDetails.gender,
-         "religion": formDetails.religion,
-         "community": formDetails.community,
-         "aadharNumber": formDetails.aadharNumber,
-     },
-     "address": {
-         "currrentAddress": formDetails.currentAddress,
-         "permanentAddress": formDetails.currentAddress,
-         "state": formDetails.state,
-         "branch": formDetails.branch,
-     }
-
- }
- console.log(formObj);
-
- try {
-
-     let date = new Date();
-     let applicationData = {
-         name: formDetails.firstName,
-         branch: formDetails.branch,
-         mobilenumber: formDetails.mobilenumber,
-         email: formDetails.email,
-         status: "Pending",
-         initialBalance: 0,
-         action: "nil",
-         date: date
-     }
-     console.log("FormData", applicationData);
-     const dbusername = "apikey-v2-zyhv5j7i61imeby1qya0ma2ejrc0fkf9n4e4bl3w5gn";
-     const dbpassword = "ec6094ae0714dc7a5ffc50a86924bef3";
-     const basicAuth = "Basic " + btoa(dbusername + ":" + dbpassword);
-     const url = "https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/newaccountregister";
-
-     axios.post(url, applicationData, {
-         headers: { Authorization: basicAuth }
-     }).then(res => {
-         let data = res.data;
-         console.log(data);
-         toastr.success("Successfully Account has been Created");
-         setTimeout(function() {
-
-            window.location.href="index.html"
-             
-         }, 2000);
-     })
- } catch (err) {
-     console.error(err.message);
-     toastr.error(err.message);
-     toastr.error("Unable to Create Account");
- }
+        document.querySelector("#firstName").innerHTML = formDetails.firstName;
+        document.querySelector("#lastName").innerHTML = formDetails.lastName;
+        document.querySelector("#fatherName").innerHTML = formDetails.fatherName;
+        document.querySelector("#email").innerHTML = formDetails.email;
+        document.querySelector("#dateOfBirth").innerHTML = formDetails.DOB;
+        document.querySelector("#mobilenumber").innerHTML = formDetails.mobilenumber;
+        document.querySelector("#gender").innerHTML = formDetails.gender;
+        document.querySelector("#currentAddress").innerHTML = formDetails.currentAddress;
+        document.querySelector("#permanentAddress").innerHTML = formDetails.permanentAddress;
+        document.querySelector("#state").innerHTML = formDetails.state;
+        document.querySelector("#branch").innerHTML = formDetails.branch;
+        document.querySelector("#religion").innerHTML = formDetails.religion;
+        document.querySelector("#community").innerHTML = formDetails.community;
+        document.querySelector("#aadharNumber").innerHTML = formDetails.aadharNumber;
 
 
 
 
+        let formObj = {
+
+            "PersonalInformation": {
+                "firstName": formDetails.firstName,
+                "lastName": formDetails.lastName,
+                "fatherName": formDetails.fatherName,
+                "email": formDetails.email,
+                "dateOfBirth": formDetails.DOB,
+                "mobilenumber": formDetails.mobilenumber,
+                "gender": formDetails.gender,
+                "religion": formDetails.religion,
+                "community": formDetails.community,
+                "aadharNumber": formDetails.aadharNumber,
+            },
+            "address": {
+                "currrentAddress": formDetails.currentAddress,
+                "permanentAddress": formDetails.currentAddress,
+                "state": formDetails.state,
+                "branch": formDetails.branch,
+            }
+
+        }
+        console.log(formObj);
+
+        function submitApplication() {
+            event.preventDefault();
+            try {
+
+                let date = new Date();
+                let applicationData = {
+                    name: formDetails.firstName,
+                    branch: formDetails.branch,
+                    mobilenumber: formDetails.mobilenumber,
+                    email: formDetails.email,
+                    status: "Pending",
+                    initialBalance: 0,
+                    action: "nil",
+                    date: date
+                }
+                console.log("FormData", applicationData);
+                const dbusername = "apikey-v2-zyhv5j7i61imeby1qya0ma2ejrc0fkf9n4e4bl3w5gn";
+                const dbpassword = "ec6094ae0714dc7a5ffc50a86924bef3";
+                const basicAuth = "Basic " + btoa(dbusername + ":" + dbpassword);
+                const url = "https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/newaccountregister";
+
+                axios.post(url, applicationData, {
+                    headers: { Authorization: basicAuth }
+                }).then(res => {
+                    let data = res.data;
+                    console.log(data);
+                    toastr.success(" Your Account has been created");
+                    setTimeout(function () {
+                        window.location.href = "listuser.html";
+                    }, 2000);
+                })
+            } catch (err) {
+                console.error(err.message);
+                toastr.error(err.message);
+                toastr.error("Unable to Create Account");
+            }
+
+        }
 
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="js/jquery.min.js"></script>
     <script>
         $("#head").load("head.html");
     </script>
-    
-     <script src="js/route.js"></script>
+
+    <!-- <script src="js/route.js"></script> -->
 </body>
 
 </html>
